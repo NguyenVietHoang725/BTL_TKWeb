@@ -1,0 +1,133 @@
+/* Điều chỉnh kích thước và style của logo */
+.navbar-brand img {
+  height: 80px; /* Tăng kích thước logo */
+  width: auto;
+}
+
+/* Thay đổi màu nền của navbar */
+.navbar {
+  background-color: #000000; /* Đặt màu nền navbar thành màu đen */
+}
+
+/* Thay đổi màu sắc của các liên kết trong navbar */
+.navbar-nav .nav-link {
+  color: #ffffff; /* Màu chữ trắng cho các liên kết */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffd700; /* Màu chữ vàng khi di chuột vào */
+}
+
+/* Tăng kích thước nội dung */
+body {
+  font-size: 1.2rem; /* Tăng kích thước chữ toàn trang */
+}
+
+/* Tăng kích thước cho nút */
+.btn {
+  font-size: 1rem; /* Tăng kích thước chữ trong nút */
+  padding: 0.5rem 1rem; /* Tăng kích thước nút */
+}
+
+/* Tăng kích thước của menu */
+.navbar-nav {
+  font-size: 1.2rem; /* Tăng kích thước chữ trong menu */
+}
+
+/* Màu vàng cho liên kết active */
+.navbar-nav .nav-link.active {
+  color: gold; /* Đặt màu chữ vàng cho liên kết active */
+}
+
+/* Tăng khoảng cách giữa các nav link */
+.navbar-nav .nav-item {
+  margin-right: 20px; /* Tùy chỉnh khoảng cách giữa các nav link */
+}
+
+/* Tùy chỉnh margin cho phần tử cuối cùng (để tránh có khoảng cách bên phải) */
+.navbar-nav .nav-item:last-child {
+  margin-right: 0; /* Xóa khoảng cách bên phải cho nav link cuối cùng */
+}
+
+/* Thay đổi màu chữ cho các liên kết thông thường */
+.navbar-nav .nav-link {
+  color: #ffffff; /* Màu chữ trắng cho các liên kết */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffd700; /* Màu chữ vàng khi di chuột vào */
+}
+
+/* Thay đổi màu nền cho nút đăng nhập và đăng ký */
+.btn-outline-primary {
+  background-color: transparent;
+  color: #ffd700; /* Màu chữ khi không hover */
+  border: 1px solid #ffd700; /* Màu viền */
+}
+
+.btn-hover:hover {
+  background-color: #ffd700; /* Màu nền khi hover */
+  color: white; /* Màu chữ khi hover */
+  border: 1px solid #ffffff;
+}
+
+/* Thay đổi màu nền cho nút btn-outline-primary khi không hover */
+.btn-outline-primary:hover {
+  color: white; /* Màu chữ khi hover */
+}
+
+/* Tạo khoảng cách giữa các nút */
+.d-flex > div {
+  margin-right: 1rem; /* Khoảng cách giữa các div */
+}
+
+/* Tùy chỉnh cho nút chuyển đổi ngôn ngữ */
+#languageSwitch {
+  padding: 0.5rem 1rem; /* Tăng padding cho nút */
+  font-size: 1rem; /* Tăng kích thước chữ cho nút */
+}
+
+/* Tùy chỉnh cho nút chuyển đổi theme */
+.theme-toggle {
+  cursor: pointer;
+  font-size: 1.5rem; /* Tăng kích thước cho biểu tượng theme */
+}
+
+.nav-item svg {
+  width: 1.2em; /* Kích thước rộng */
+  height: 1.2em; /* Kích thước cao */
+  margin-right: 0.5em; /* Khoảng cách bên phải */
+  margin-bottom: 0.2em; /* Thêm khoảng cách trên */
+}
+
+.navbar-toggler {
+  border: none; /* Bỏ viền */
+  outline: none; /* Bỏ viền khi nhấn */
+}
+
+.navbar-toggler svg {
+  width: 2em; /* Thay đổi kích thước nếu cần */
+  height: 2em; /* Thay đổi kích thước nếu cần */
+  stroke: #fff; /* Thay đổi màu sắc của SVG */
+}
+
+.scroll-to-top {
+  position: fixed; /* Để cố định ở một vị trí */
+  bottom: 30px; /* Khoảng cách từ đáy trang */
+  right: 30px; /* Khoảng cách từ bên phải */
+  width: 40px; /* Kích thước chiều rộng */
+  height: 40px; /* Kích thước chiều cao */
+  background-color: #ffd700; /* Màu nền */
+  color: black; /* Màu chữ */
+  display: flex; /* Để căn giữa nội dung */
+  align-items: center; /* Canh giữa theo chiều dọc */
+  justify-content: center; /* Canh giữa theo chiều ngang */
+  border-radius: 5px; /* Bo tròn góc */
+  cursor: pointer; /* Đổi con trỏ thành tay khi hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng */
+  transition: background-color 0.3s; /* Hiệu ứng chuyển đổi màu nền */
+}
+
+.scroll-to-top:hover {
+  background-color: #ff8b00; /* Màu nền khi hover */
+}

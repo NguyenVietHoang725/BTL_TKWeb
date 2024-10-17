@@ -1,0 +1,62 @@
+footer {
+  background-color: #000000; /* Màu nền footer */
+}
+
+/* Thay đổi kích thước chữ cho footer */
+footer p {
+  color: #fff;
+  font-size: 0.9rem; /* Kích thước chữ cho các đoạn văn */
+  margin: 0.5rem 0; /* Tạo khoảng cách giữa các đoạn */
+}
+
+/* Thay đổi kích thước chữ cho tiêu đề trong footer */
+footer h5 {
+  color: #ffd700;
+  font-size: 1.25rem; /* Kích thước chữ cho tiêu đề */
+  margin-bottom: 0.5rem; /* Tạo khoảng cách dưới tiêu đề */
+}
+
+/* Thay đổi màu chữ cho các liên kết trong footer */
+footer a {
+  color: #ffffff; /* Màu chữ trắng cho các liên kết */
+  font-size: smaller;
+}
+
+footer a:hover {
+  text-decoration: underline; /* Gạch chân khi hover */
+}
+
+/* Điều chỉnh khoảng cách giữa các mục liên kết */
+footer .list-unstyled li {
+  margin-bottom: 0.5rem; /* Khoảng cách giữa các liên kết */
+}
+
+footer svg {
+  width: 1.2em; /* Kích thước rộng */
+  height: 1.2em; /* Kích thước cao */
+  margin-right: 0.5em; /* Khoảng cách bên phải */
+  margin-bottom: 0.2em; /* Thêm khoảng cách trên */
+}
+
+.social-icons {
+  display: flex; /* Sử dụng flexbox để sắp xếp các biểu tượng theo hàng */
+  justify-content: flex-start; /* Canh trái các biểu tượng */
+  gap: 10px; /* Khoảng cách giữa các biểu tượng */
+  margin-top: 15px; /* Khoảng cách trên giữa phần thông tin liên hệ và biểu tượng */
+}
+
+.social-icons a {
+  display: inline-block; /* Để biểu tượng có thể nhận kích thước */
+}
+
+.social-icons img {
+  width: 30px; /* Kích thước chiều rộng của biểu tượng */
+  height: 30px; /* Kích thước chiều cao của biểu tượng */
+  object-fit: contain; /* Đảm bảo biểu tượng không bị biến dạng */
+  transition: transform 0.3s; /* Hiệu ứng chuyển đổi khi hover */
+  border: 1px solid #ffd700;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1); /* Phóng to một chút khi hover */
+}
