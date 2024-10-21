@@ -8,21 +8,26 @@
   margin-bottom: 20px;
 }
 
+/* Ẩn phân trang */
+.swiper-pagination {
+  display: none;
+}
+
 .swiper-container {
   width: 100%;
-  height: 400px;
+  overflow: hidden;
 }
 
 .swiper-slide {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  cursor: pointer;
 }
 
 .swiper-slide img {
   width: 100%;
-  height: auto;
+  max-width: 300px;
   border-radius: 10px;
 }
 
@@ -35,9 +40,38 @@
   color: white;
   padding: 10px;
   border-radius: 0 0 10px 10px;
-  display: none; /* Ẩn thông tin cho tất cả các ưu đãi */
+  display: none;
 }
 
 .swiper-slide-active .info {
-  display: block; /* Hiện thông tin cho ưu đãi đang được chọn */
+  display: block;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  margin: 0 5px;
+  transition: background 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background: #007bff;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #000;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
 }
