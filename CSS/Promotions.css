@@ -1,11 +1,19 @@
-.promotions-section {
+.slide-section {
   padding: 20px;
-  background-color: #f8f9fa;
 }
 
-.promotions-section h2 {
+.slide-section h2 {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
 }
 
 /* Ẩn phân trang */
@@ -15,7 +23,13 @@
 
 .swiper-container {
   width: 100%;
+  position: relative;
+  height: auto;
   overflow: hidden;
+  border: 5px solid #ffd700; /* Viền xung quanh nhóm slide */
+  border-radius: 15px; /* Tùy chỉnh để viền bo tròn nếu cần */
+  padding: 15px 20px 15px 20px;
+  box-sizing: border-box; /* Tính cả viền và padding trong kích thước container */
 }
 
 .swiper-slide {
@@ -23,6 +37,12 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide:hover {
+  transform: scale(1.1); /* Phóng to slide khi hover */
+  z-index: 10; /* Đảm bảo slide phóng to nằm trên các slide khác */
 }
 
 .swiper-slide img {
@@ -37,41 +57,81 @@
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-size: 18px;
   color: white;
   padding: 10px;
   border-radius: 0 0 10px 10px;
   display: none;
+  z-index: 11;
 }
 
 .swiper-slide-active .info {
   display: block;
 }
 
-.swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  margin: 0 5px;
-  transition: background 0.3s;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
 }
 
-.swiper-pagination-bullet-active {
-  background: #007bff;
+thead tr th {
+  text-align: center;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  padding-bottom: 8px;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  color: #000;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border: none;
+  border-bottom: 1px solid #ccc;
 }
 
-.swiper-button-prev {
-  left: 10px;
+.dropdown-content {
+  display: none; /* Mặc định ẩn */
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ccc;
 }
 
-.swiper-button-next {
-  right: 10px;
+.dropdown-button {
+  cursor: pointer;
+  color: #007bff;
+  font-size: 20px;
+}
+
+.dropdown-button:hover {
+  color: #0056b3;
+}
+
+.size-6 {
+  width: 24px; /* Thay đổi kích thước theo nhu cầu */
+  height: 24px; /* Thay đổi kích thước theo nhu cầu */
+}
+
+.down-icon {
+  transform: rotate(0deg); /* Mũi tên xuống */
+  transition: transform 0.3s; /* Hiệu ứng chuyển đổi */
+}
+
+.up-icon {
+  transform: rotate(180deg); /* Mũi tên lên */
+  transition: transform 0.3s; /* Hiệu ứng chuyển đổi */
+}
+
+.banner-section {
+  display: block; /* Đặt các banner theo chiều dọc */
+  text-align: center; /* Căn giữa các ảnh nếu cần */
+}
+
+.banner-section img {
+  width: 100%; /* Đảm bảo các banner chiếm toàn bộ chiều rộng của container */
+  max-width: 1920px; /* Giới hạn chiều rộng tối đa cho banner, bạn có thể thay đổi giá trị này */
+  height: auto; /* Giữ tỷ lệ ảnh */
+  margin: 20px 0; /* Thêm khoảng cách giữa các ảnh */
+  border: 3px solid #ffd700;
 }

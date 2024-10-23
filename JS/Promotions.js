@@ -8,7 +8,7 @@ const swiper = new Swiper(".swiper-container", {
   },
   autoplay: {
     delay: 3000,
-    disableOnInteraction: false,
+    disableOnInteraction: false, // Tiếp tục autoplay ngay cả khi có tương tác
   },
   breakpoints: {
     576: { slidesPerView: 2, spaceBetween: 20 },
@@ -18,31 +18,57 @@ const swiper = new Swiper(".swiper-container", {
   },
 });
 
-// Hàm cập nhật hiển thị thông tin cho slide đầu tiên
-function updateInfoDisplay() {
+// Hàm hiển thị thông tin khi hover
+function setupHoverEffect() {
   const slides = document.querySelectorAll(".swiper-slide");
+
   slides.forEach((slide) => {
     const info = slide.querySelector(".info");
-    if (info) info.style.display = "none"; // Ẩn tất cả thông tin
-  });
 
-  const activeSlide = swiper.slides[swiper.activeIndex];
-  const activeInfo = activeSlide.querySelector(".info");
-  if (activeInfo) activeInfo.style.display = "block"; // Hiển thị thông tin cho slide đầu tiên
+    // Hover vào slide: hiển thị thông tin
+    slide.addEventListener("mouseenter", () => {
+      if (info) info.style.display = "block"; // Hiển thị thông tin
+    });
+
+    // Rời khỏi slide: ẩn thông tin
+    slide.addEventListener("mouseleave", () => {
+      if (info) info.style.display = "none"; // Ẩn thông tin
+    });
+  });
 }
 
-// Xử lý click vào slide để di chuyển đến đầu tiên
-swiper.slides.forEach((slide) => {
-  slide.addEventListener("click", () => {
-    const clickedIndex = slide.getAttribute("data-swiper-slide-index");
-    swiper.slideToLoop(parseInt(clickedIndex), 500); // Di chuyển slide được click
+// Cập nhật khi khởi động và khi slide thay đổi
+setupHoverEffect();
 
-    setTimeout(updateInfoDisplay, 500); // Cập nhật thông tin sau khi chuyển
+// Lắng nghe sự kiện khi slide thay đổi để đảm bảo hover hoạt động trên slide mới
+swiper.on("slideChange", setupHoverEffect);
+
+function toggleDropdown(button) {
+  const dropdownRow = button.parentElement.parentElement.nextElementSibling;
+
+  // Tìm tất cả các hàng dropdown và đóng lại nếu không phải hàng hiện tại
+  const allDropdowns = document.querySelectorAll(".dropdown-content");
+  allDropdowns.forEach((row) => {
+    if (row !== dropdownRow) {
+      row.style.display = "none"; // Đóng tất cả
+      const associatedButton = row.previousElementSibling.querySelector(
+        ".dropdown-button svg"
+      );
+      associatedButton.classList.remove("up-icon"); // Đặt lại biểu tượng thành mũi tên xuống
+      associatedButton.classList.add("down-icon"); // Đặt lại biểu tượng thành mũi tên xuống
+    }
   });
-});
 
-// Cập nhật hiển thị khi slide thay đổi tự động hoặc do người dùng tương tác
-swiper.on("slideChange", updateInfoDisplay);
-
-// Gọi lần đầu để hiển thị thông tin cho slide đầu tiên
-updateInfoDisplay();
+  // Kiểm tra trạng thái của hàng hiện tại
+  if (dropdownRow.style.display === "table-row") {
+    dropdownRow.style.display = "none"; // Đóng hàng
+    const icon = button.querySelector("svg");
+    icon.classList.remove("up-icon"); // Đổi thành mũi tên xuống
+    icon.classList.add("down-icon"); // Đổi thành mũi tên xuống
+  } else {
+    dropdownRow.style.display = "table-row"; // Hiển thị hàng
+    const icon = button.querySelector("svg");
+    icon.classList.remove("down-icon"); // Đổi thành mũi tên lên
+    icon.classList.add("up-icon"); // Đổi thành mũi tên lên
+  }
+}
