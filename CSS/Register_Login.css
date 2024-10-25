@@ -98,6 +98,40 @@
   animation: move 0.6s;
 }
 
+.notification-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #4caf50; /* Màu nền thông báo */
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.notification-box.d-none {
+  display: none;
+}
+
+.password-container {
+  width: 100%;
+  position: relative; /* Để con mắt có thể được định vị tuyệt đối */
+}
+
+.eye-icon {
+  position: absolute; /* Đặt con mắt ở vị trí tuyệt đối */
+  right: 10px; /* Khoảng cách từ bên phải */
+  top: 50%; /* Căn giữa theo chiều dọc */
+  transform: translateY(-50%); /* Căn giữa chính xác */
+  cursor: pointer; /* Hiển thị con trỏ khi di chuột */
+  width: 20px; /* Kích thước biểu tượng */
+  height: 20px; /* Kích thước biểu tượng */
+}
+
 @keyframes move {
   0%,
   49.99% {
