@@ -1,17 +1,39 @@
-/* Chuyển theme. */
+/* Chuyển theme dark. */
 body.bg-dark section h2 {
   color: #ffd700;
 }
 
 body.bg-dark thead tr th {
-  color: #ffd700;
-  border-top: 2px solid #ffd700;
+  color: #393e46;
+  background-color: #ffd700;
+  border: 1px solid #000;
 }
 
-body.bg-dark tbody tr:nth-child(1) {
-  border-top: 2px solid #ffd700;
+body.bg-dark tbody tr td {
+  background-color: #fffbe0;
+  border: 1px solid #000;
 }
 
+body.bg-dark .dropdown-content td {
+  border-left: 1px solid #000;
+  border-color: #000;
+  background-color: #f0e19e;
+}
+
+body.bg-dark .table thead tr th:nth-child(3) {
+  border-right: 1px solid #000;
+}
+
+body.bg-dark .swiper-container {
+  background-color: #fffbe0;
+  border: 5px solid #ffd700;
+}
+
+body.bg-dark .banner-section img {
+  border-color: #ffd700;
+}
+
+/* Theme light. */
 .slide-section {
   padding: 20px;
 }
@@ -106,13 +128,6 @@ table {
 thead tr th {
   text-align: left;
   padding-bottom: 8px;
-}
-
-th,
-td {
-  padding: 10px;
-  text-align: left;
-  border: none;
   border: 1px solid #ccc;
 }
 
@@ -126,11 +141,51 @@ td {
   border-left: none;
 }
 
-.dropdown-content {
-  display: none; /* Mặc định ẩn */
+.table thead tr th:nth-child(3) {
+  border-right: 1px solid #ccc;
+}
+
+th,
+td {
   padding: 10px;
-  background-color: #f9f9f9;
-  border-top: 1px solid #ccc;
+  text-align: left;
+  border: none;
+  border: 1px solid #ccc;
+}
+
+.dropdown-content {
+  display: none; /* Ẩn mặc định */
+  border: 1px solid #ccc; /* Đường viền cho dropdown */
+  padding: 10px; /* Khoảng cách bên trong dropdown */
+}
+
+.dropdown-content tr {
+  border-left: 1px solid #ccc;
+}
+
+.dropdown-content td {
+  background-color: #eeeeee;
+}
+
+.dropdown-content p {
+  line-height: 1.5; /* Khoảng cách giữa các dòng */
+  color: #393e46; /* Màu chữ */
+  margin-bottom: 10px;
+  padding: 0 10px 0 15px;
+}
+
+.dropdown-content ul {
+  padding: 0 0 0 50px;
+}
+
+.dropdown-content ul li {
+  color: #393e46;
+  margin-bottom: 5px; /* Khoảng cách giữa các mục trong danh sách */
+}
+
+.hightlight {
+  color: #f95959;
+  font-weight: bold;
 }
 
 .dropdown-button {
