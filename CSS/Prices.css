@@ -1,0 +1,89 @@
+.ticket-pricing {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.ticket-pricing h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.ticket-pricing p {
+    color: #555;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.table th, .table td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table thead th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.table tbody tr td {
+    font-size: 1rem;
+}
+
+.vip {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.sweetbox {
+    color: #5bc0de;
+    font-weight: bold;
+}
+
+.note {
+    font-style: italic;
+    color: #777;
+    font-size: smaller;
+}
+
+/* CSS để căn các mục danh sách */
+.discounts-section .accordion-body ul {
+    padding-left: 20px;
+}
+
+.discounts-section .accordion-body ul li {
+    text-align: left;
+    list-style-position: inside;
+}
+  
+.thank-you-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+.thank-you-section p {
+    margin: 0;
+    color: #333;
+}
+.thank-you-section .lead{
+    font-size: 1.25rem;
+}
+.thank-you-section .fw-bold{
+    font-size: 1.5rem;
+    color: #007bff;
+}
+  
