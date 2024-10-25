@@ -1,3 +1,17 @@
+/* Chuyển theme. */
+body.bg-dark section h2 {
+  color: #ffd700;
+}
+
+body.bg-dark thead tr th {
+  color: #ffd700;
+  border-top: 2px solid #ffd700;
+}
+
+body.bg-dark tbody tr:nth-child(1) {
+  border-top: 2px solid #ffd700;
+}
+
 .slide-section {
   padding: 20px;
 }
@@ -12,7 +26,7 @@
   margin: 40px 0 20px;
   font-size: 36px;
   font-weight: bold;
-  color: #333;
+  color: #393e46;
   text-transform: uppercase;
 }
 
@@ -26,7 +40,7 @@
   position: relative;
   height: auto;
   overflow: hidden;
-  border: 5px solid #ffd700; /* Viền xung quanh nhóm slide */
+  border: 5px solid #393e46; /* Viền xung quanh nhóm slide */
   border-radius: 15px; /* Tùy chỉnh để viền bo tròn nếu cần */
   padding: 15px 20px 15px 20px;
   box-sizing: border-box; /* Tính cả viền và padding trong kích thước container */
@@ -76,10 +90,21 @@ table {
   margin: 20px 0;
 }
 
+.table {
+  background-color: #f8f9fa; /* Màu nền mới (bạn có thể thay đổi mã màu này) */
+}
+
+.table th {
+  background-color: #343a40; /* Màu nền cho tiêu đề */
+  color: #ffffff; /* Màu chữ cho tiêu đề */
+}
+
+.table td {
+  background-color: #ffffff; /* Màu nền cho ô dữ liệu */
+}
+
 thead tr th {
-  text-align: center;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
+  text-align: left;
   padding-bottom: 8px;
 }
 
@@ -88,7 +113,17 @@ td {
   padding: 10px;
   text-align: left;
   border: none;
-  border-bottom: 1px solid #ccc;
+  border: 1px solid #ccc;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  border-right: none;
+}
+
+.table th:last-child,
+.table td:last-child {
+  border-left: none;
 }
 
 .dropdown-content {
@@ -100,12 +135,12 @@ td {
 
 .dropdown-button {
   cursor: pointer;
-  color: #007bff;
+  color: #000;
   font-size: 20px;
 }
 
 .dropdown-button:hover {
-  color: #0056b3;
+  color: #000;
 }
 
 .size-6 {
@@ -133,5 +168,5 @@ td {
   max-width: 1920px; /* Giới hạn chiều rộng tối đa cho banner, bạn có thể thay đổi giá trị này */
   height: auto; /* Giữ tỷ lệ ảnh */
   margin: 20px 0; /* Thêm khoảng cách giữa các ảnh */
-  border: 3px solid #ffd700;
+  border: 3px solid #000;
 }
