@@ -93,11 +93,10 @@
 
               <!-- Language Switch & Theme Toggle -->
               <div class="d-flex align-items-start d-lg-flex">
-                <!-- Div cho nút Đăng Nhập và Đăng Ký -->
                 <div class="me-2">
-                  <button id="headerLogin" class="btn btn-outline-primary btn-hover" onclick="location.href='Register_Login.html'">
+                  <button id="accountButton" class="btn btn-outline-primary btn-hover" onclick="handleAccountButtonClick()">
                     Đăng Nhập
-                  </button>
+                </button>
                 </div>
 
                 <!-- Div cho nút chuyển đổi ngôn ngữ và theme -->
@@ -118,43 +117,44 @@
     </header>
 
     <main>
-      <!-- Tiêu đề của Section -->
-      <h2 class="section-title">Phim Hot Trong Tuần</h2>
+      <section class="hot-movies-section">
+        <!-- Tiêu đề của Section -->
+        <h2 class="section-title">Phim Hot Trong Tuần</h2>
 
-      <!-- Swiper Slider -->
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <!-- Slide 1 -->
-          <div class="swiper-slide hot-movie-section">
-            <video class="bg-video" autoplay muted playsinline loop>
-              <source src="../Images/Videos/desme4.mp4" type="video/mp4" />
-              Trình duyệt của bạn không hỗ trợ video.
-            </video>
-            <div class="overlay"></div>
-            <div class="movie-info container">
-              <img class="poster" src="../Images/Posters/desme4.png" alt="Despicable Me 4" />
-              <div class="details">
-                <h2 class="movie-title">Despicable Me 4</h2>
-                <p class="movie-description">Gru và những Minions hài hước trở lại với một nhiệm vụ mới đầy bất ngờ! Trong phần phim này, Gru phải đối mặt với thách thức vừa bảo vệ gia đình, vừa ngăn chặn một kẻ thù nguy hiểm với âm mưu hủy diệt thế giới. Hành trình phiêu lưu hài hước, cảm động và không thiếu những trò tinh nghịch của các Minions sẽ khiến khán giả cười nghiêng ngả. Đây chắc chắn là bộ phim không thể bỏ lỡ trong tuần này!</p>
-                <p>
-                  <strong>Thể loại:</strong> Hoạt hình, Hài hước, Phiêu lưu, Gia đình <br />
-                  <strong>Thời lượng:</strong> 95 phút <br />
-                  <strong>Điểm đánh giá:</strong> 8.5/10
-                </p>
-                <a href="#" class="btn btn-primary">Xem chi tiết</a>
+        <!-- Swiper Slider -->
+        <div class="swiper-container hot-movies-slider">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide hot-movie">
+              <video class="bg-video" autoplay muted playsinline loop>
+                <source src="../Images/Videos/desme4.mp4" type="video/mp4" />
+                Trình duyệt của bạn không hỗ trợ video.
+              </video>
+              <div class="overlay"></div>
+              <div class="movie-info container">
+                <img class="poster" src="../Images/Posters/DespicableMe4.png" alt="Despicable Me 4" />
+                <div class="details">
+                  <h2 class="movie-title">Despicable Me 4</h2>
+                  <p class="movie-description">Gru và những Minions hài hước trở lại với một nhiệm vụ mới đầy bất ngờ! Trong phần phim này, Gru phải đối mặt với thách thức vừa bảo vệ gia đình, vừa ngăn chặn một kẻ thù nguy hiểm với âm mưu hủy diệt thế giới. Hành trình phiêu lưu hài hước, cảm động và không thiếu những trò tinh nghịch của các Minions sẽ khiến khán giả cười nghiêng ngả. Đây chắc chắn là bộ phim không thể bỏ lỡ trong tuần này!</p>
+                  <p>
+                    <strong>Thể loại:</strong> Hoạt hình, Hài hước, Phiêu lưu, Gia đình <br />
+                    <strong>Thời lượng:</strong> 95 phút <br />
+                    <strong>Điểm đánh giá:</strong> 8.5/10
+                  </p>
+                  <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                </div>
               </div>
             </div>
-          </div>
 
           <!-- Slide 2 -->
-          <div class="swiper-slide hot-movie-section">
+          <div class="swiper-slide hot-movie">
             <video class="bg-video" autoplay muted playsinline loop>
               <source src="../Images/Videos/dpwv.mp4" type="video/mp4" />
               Trình duyệt của bạn không hỗ trợ video.
             </video>
             <div class="overlay"></div>
             <div class="movie-info container">
-              <img class="poster" src="../Images/Posters/dpnwv.png" alt="Deadpool & Wolverine" />
+              <img class="poster" src="../Images/Posters/DeadpoolAndWolverine.png" alt="Deadpool & Wolverine" />
               <div class="details">
                 <h2 class="movie-title">Deadpool & Wolverine</h2>
                 <p class="movie-description">Cặp đôi "lắm lời" và "cục súc" chính thức hợp tác! Deadpool cùng Wolverine bị cuốn vào một nhiệm vụ nguy hiểm, nơi họ phải đối đầu với những kẻ thù mới lẫn cũ. Với sự kết hợp giữa hành động mãn nhãn, những pha đấu kiếm đỉnh cao và vô số câu thoại hài hước, bộ phim hứa hẹn sẽ mang đến trải nghiệm bùng nổ và đầy tiếng cười. Đây là lựa chọn hoàn hảo cho fan của siêu anh hùng và những ai yêu thích sự phá cách!</p>
@@ -169,14 +169,14 @@
           </div>
 
           <!-- Slide 3 -->
-          <div class="swiper-slide hot-movie-section">
+          <div class="swiper-slide hot-movie">
            <video class="bg-video" autoplay muted playsinline loop>
               <source src="../Images/Videos/jw4.mp4" type="video/mp4" />
               Trình duyệt của bạn không hỗ trợ video.
             </video>
             <div class="overlay"></div>
             <div class="movie-info container">
-              <img class="poster" src="../Images/Posters/johnwick4.png" alt="John Wick 4" />
+              <img class="poster" src="../Images/Posters/JohnWick4.png" alt="John Wick 4" />
               <div class="details">
                <h2 class="movie-title">John Wick 4</h2>
                <p class="movie-description">John Wick trở lại trong phần 4 với những pha hành động nghẹt thở và kịch tính hơn bao giờ hết! Lần này, John phải đối mặt với thử thách lớn nhất khi phải đối đầu với cả thế giới ngầm đang săn lùng anh. Cuộc chiến sinh tử với những kẻ thù đầy nguy hiểm, cùng các trận đấu võ thuật đẹp mắt và những pha đấu súng mãn nhãn sẽ khiến khán giả không thể rời mắt. Đây chắc chắn là bộ phim hành động đáng mong đợi nhất trong tuần này!</p>
@@ -191,14 +191,14 @@
           </div>
 
           <!-- Slide 4 -->
-          <div class="swiper-slide hot-movie-section">
+          <div class="swiper-slide hot-movie">
             <video class="bg-video" autoplay muted playsinline loop>
                <source src="../Images/Videos/venom3.mp4" type="video/mp4" />
                Trình duyệt của bạn không hỗ trợ video.
              </video>
              <div class="overlay"></div>
              <div class="movie-info container">
-               <img class="poster" src="../Images/Posters/venomfinale.png" alt="Venom: The Last Dance" />
+               <img class="poster" src="../Images/Posters/VenomKeoCuoi.jpg" alt="Venom: The Last Dance" />
                <div class="details">
                 <h2 class="movie-title">Venom: The Last Dance</h2>
                 <p class="movie-description">Venom trở lại trong "The Last Dance", với cuộc phiêu lưu đầy hỗn loạn và bất ngờ hơn bao giờ hết! Lần này, Eddie Brock và Venom phải đối mặt với một mối đe dọa mới từ thế lực hắc ám nhằm kiểm soát symbiote. Những cảnh hành động mãn nhãn và sự kết hợp hài hước, giật gân giữa Eddie và Venom hứa hẹn sẽ mang đến trải nghiệm đầy kịch tính và vui nhộn cho khán giả. Đây là bộ phim hành động siêu anh hùng không thể bỏ lỡ trong tuần này!</p> 
@@ -213,14 +213,14 @@
            </div>
 
            <!-- Slide 5 -->
-          <div class="swiper-slide hot-movie-section">
+          <div class="swiper-slide hot-movie">
             <video class="bg-video" autoplay muted playsinline loop>
                <source src="../Images/Videos/transform1.mp4" type="video/mp4" />
                Trình duyệt của bạn không hỗ trợ video.
              </video>
              <div class="overlay"></div>
              <div class="movie-info container">
-               <img class="poster" src="../Images/Posters/transformersone.png" alt="Transfomers One" />
+               <img class="poster" src="../Images/Posters/TransformersOne.png" alt="Transfomers One" />
                <div class="details">
                 <h2 class="movie-title">Transfomers One</h2>
                 <p class="movie-description">Transformers One đưa khán giả trở lại hành tinh Cybertron trong cuộc hành trình mới đầy hành động và kịch tính. Bộ phim khám phá nguồn gốc của cuộc chiến giữa Autobots và Decepticons, khi Optimus Prime và Megatron từng là đồng đội sát cánh bên nhau trước khi trở thành kẻ thù không đội trời chung. Những pha chiến đấu mãn nhãn, kỹ xảo đỉnh cao và cốt truyện sâu sắc sẽ khiến khán giả không thể rời mắt. Đây chắc chắn là phần phim đáng mong đợi nhất trong loạt phim "Transformers"!</p> 
@@ -235,14 +235,14 @@
            </div>
 
             <!-- Slide 6 -->
-          <div class="swiper-slide hot-movie-section">
+          <div class="swiper-slide hot-movie">
             <video class="bg-video" autoplay muted playsinline loop>
                <source src="../Images/Videos/thewildrobot.mp4" type="video/mp4" />
                Trình duyệt của bạn không hỗ trợ video.
              </video>
              <div class="overlay"></div>
              <div class="movie-info container">
-               <img class="poster" src="../Images/Posters/thewildrobot.png" alt="The Wild Robot" />
+               <img class="poster" src="../Images/Posters/TheWildRobot.png" alt="The Wild Robot" />
                <div class="details">
                 <h2 class="movie-title">The Wild Robot</h2>
                 <p class="movie-description">"The Wild Robot" kể về cuộc hành trình phiêu lưu đầy cảm xúc của một robot tên Roz, bị mắc kẹt trên một hòn đảo hoang vắng. Không biết làm thế nào để sinh tồn, Roz phải học cách thích nghi với môi trường tự nhiên và kết bạn với các loài động vật hoang dã. Bộ phim mang đến những thông điệp ý nghĩa về sự hòa hợp giữa con người và thiên nhiên, cùng với đó là những tình tiết cảm động và hình ảnh tuyệt đẹp. Đây chắc chắn là một bộ phim gia đình đầy thú vị và sâu lắng, phù hợp cho mọi lứa tuổi!</p> 
@@ -260,23 +260,91 @@
         <!-- Pagination -->
       <div class="swiper-pagination"></div>
 
-      <!-- Nút điều khiển tự động -->
-      <button id="toggle-autoplay" class="btn-control">
-        <div class="play-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-            <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
-          </svg>
-        </div>
-        <div class="pause-icon hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-            <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
-          </svg>
-        </div>
-      </button>
-
       <!-- Navigation Arrows -->
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div> 
+      </section>
+
+      <section class="container poster-slider-section py-5">
+        <h2 class="section-title">Khám Phá Các Phim Hot</h2>
+        <div class="swiper-container poster-slider mb-4">
+            <div class="swiper-wrapper">
+                <!-- Poster Slide 1 -->
+                <div class="swiper-slide poster-slide">
+                    <img src="../Images/Posters/VenomKeoCuoi.jpg" alt="Poster 1" class="poster-image" />
+                    <div class="poster-overlay">
+                      <div class="button-container">
+                        <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                        <a href="#" class="btn btn-secondary">Đặt vé</a>
+                      </div>
+                    </div>
+                </div>
+                <!-- Poster Slide 2 -->
+                <div class="swiper-slide poster-slide">
+                    <img src="../Images/Posters/QuyAnTangP2.jpg" alt="Poster 2" class="poster-image" />
+                    <div class="poster-overlay">
+                      <div class="button-container">
+                        <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                        <a href="#" class="btn btn-secondary">Đặt vé</a>
+                      </div>
+                    </div>
+                </div>
+                <!-- Poster Slide 3 -->
+                <div class="swiper-slide poster-slide">
+                    <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 3" class="poster-image" />
+                    <div class="poster-overlay">
+                      <div class="button-container">
+                        <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                        <a href="#" class="btn btn-secondary">Đặt vé</a>
+                      </div>
+                    </div>
+                </div>
+                <!-- Poster Slide 4 -->
+                <div class="swiper-slide poster-slide">
+                    <img src="../Images/Posters/NgayXuaCoMotChuyenTinh.jpg" alt="Poster 4" class="poster-image" />
+                    <div class="poster-overlay">
+                      <div class="button-container">
+                        <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                        <a href="#" class="btn btn-secondary">Đặt vé</a>
+                      </div>
+                    </div>
+                </div>
+                <!-- Poster Slide 5 -->
+                <div class="swiper-slide poster-slide">
+                    <img src="../Images/Posters/TheWildRobot.png" alt="Poster 5" class="poster-image" />
+                    <div class="poster-overlay">
+                      <div class="button-container">
+                        <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                        <a href="#" class="btn btn-secondary">Đặt vé</a>
+                      </div>
+                    </div>
+                </div>
+                <!-- Poster Slide 6 -->
+                <div class="swiper-slide poster-slide">
+                    <img src="../Images/Posters/TroChoiNhanTinh.jpg" alt="Poster 6" class="poster-image" />
+                    <div class="poster-overlay">
+                      <div class="button-container">
+                        <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                        <a href="#" class="btn btn-secondary">Đặt vé</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Navigation Buttons -->
+            <div class="swiper-button-next poster-button-next"></div>
+            <div class="swiper-button-prev poster-button-prev"></div>
+        </div>
+    </section>
+
+      <section class="container banner-section mt-5">
+        <div>
+          <img src="../Images/Promotions/hhbanner.png" alt="Halloween Holiday" />
+        </div>
+        <div>
+          <img src="../Images/Promotions/cmbanner.png" alt="Christmas Holiday" />
+        </div>
+      </section>
     </main>
     
     <footer class="mt-5 py-4">
@@ -306,7 +374,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                     <path fill-rule="evenodd" d="M3 2.25a.75.75 0 0 0 0 1.5v16.5h-.75a.75.75 0 0 0 0 1.5H15v-18a.75.75 0 0 0 0-1.5H3ZM6.75 19.5v-2.25a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-.75.75h-3a.75.75 0 0 1-.75-.75ZM6 6.75A.75.75 0 0 1 6.75 6h.75a.75.75 0 0 1 0 1.5h-.75A.75.75 0 0 1 6 6.75ZM6.75 9a.75.75 0 0 0 0 1.5h.75a.75.75 0 0 0 0-1.5h-.75ZM6 12.75a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM10.5 6a.75.75 0 0 0 0 1.5h.75a.75.75 0 0 0 0-1.5h-.75Zm-.75 3.75A.75.75 0 0 1 10.5 9h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM10.5 12a.75.75 0 0 0 0 1.5h.75a.75.75 0 0 0 0-1.5h-.75ZM16.5 6.75v15h5.25a.75.75 0 0 0 0-1.5H21v-12a.75.75 0 0 0 0-1.5h-4.5Zm1.5 4.5a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Zm.75 2.25a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75v-.008a.75.75 0 0 0-.75-.75h-.008ZM18 17.25a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z" clip-rule="evenodd" />
                 </svg>
-                Địa chỉ: Tầng 3, TTTM Soiech, Đường ABC, Phường XYZ, Quận 1, TP.HCM, Việt Nam
+                Địa chỉ: Tầng 3, TTTM MAHOLA, Đường ABC, Phường XYZ, Quận EFG, TP. Hà Nội, Việt Nam
             </p>
             <p>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">

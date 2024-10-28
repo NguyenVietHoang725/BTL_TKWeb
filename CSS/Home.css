@@ -9,10 +9,10 @@
 }
 
 /* Căn chỉnh cho phần hot-movie */
-.hot-movie-section {
+.hot-movie {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 650px;
   overflow: hidden;
   color: white;
   margin-bottom: 40px;
@@ -56,6 +56,7 @@
 .poster {
   width: 365px;
   border-radius: 10px;
+  margin-right: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -94,11 +95,15 @@
   background-color: #e0521a;
 }
 
+.hot-movies-slider {
+  height: 650px;
+}
+
 .swiper-container {
   width: 100%;
-  height: 500px; /* Giảm chiều cao nếu cần */
   margin-bottom: 0;
   position: relative; /* Đảm bảo pagination được đặt dựa vào container này */
+  overflow: hidden;
 }
 
 .swiper-slide {
@@ -138,21 +143,66 @@
   z-index: 2;
 }
 
-#toggle-autoplay {
-  margin-left: 10px; /* Khoảng cách giữa nút và pagination */
-  padding: 8px;
-  background-color: #fff;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-control .size-6 {
-  width: 24px;
-  height: 24px;
-}
-
 /* Ẩn icon không dùng */
 .hidden {
   display: none;
+}
+
+/* Style cho poster slider */
+.poster-slider {
+  position: relative;
+}
+
+/* Ảnh poster */
+.poster-image {
+  width: 100%;
+  height: auto; /* Đảm bảo chiều cao tự động */
+  border-radius: 10px; /* Bo góc cho poster */
+}
+
+/* Overlay cho poster */
+.poster-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0.7); /* Màu nền cho overlay */
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  opacity: 0; /* Ẩn overlay ban đầu */
+  transition: opacity 0.3s ease; /* Hiệu ứng chuyển đổi */
+}
+
+/* Hiện overlay khi hover */
+.poster-slide:hover .poster-overlay {
+  opacity: 1; /* Hiện overlay khi hover */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column; /* Sắp xếp button theo chiều dọc */
+  gap: 10px; /* Khoảng cách giữa hai button */
+}
+
+/* Nút bấm trong poster overlay */
+.btn-primary,
+.btn-secondary {
+  margin: 5px; /* Khoảng cách giữa các nút */
+}
+
+/* Banner Section */
+.banner-section {
+  display: block; /* Đặt các banner theo chiều dọc */
+  text-align: center; /* Căn giữa các ảnh nếu cần */
+}
+
+.banner-section img {
+  width: 100%; /* Đảm bảo các banner chiếm toàn bộ chiều rộng của container */
+  max-width: 1920px; /* Giới hạn chiều rộng tối đa cho banner, bạn có thể thay đổi giá trị này */
+  height: auto; /* Giữ tỷ lệ ảnh */
+  margin: 20px 0; /* Thêm khoảng cách giữa các ảnh */
+  border: 3px solid #000;
 }
