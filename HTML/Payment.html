@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đặt vé - Mahola Cinema</title>
+    <title>Phim - Mahola Cinema</title>
     <link
       href="../Bootstrap/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../CSS/Header.css" />
     <link rel="stylesheet" href="../CSS/Footer.css" />
-    <link rel="stylesheet" href="../CSS/Tickets.css" />
+    <link rel="stylesheet" href="../CSS/Movies.css" />
   </head>
   <body class="bg-light">
     <!-- Header -->
@@ -36,11 +36,11 @@
             aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
-        >
+            >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
-        </button>
+            </button>
 
           <!-- Navbar Links & Buttons -->
           <div class="collapse navbar-collapse" id="navbarNav">
@@ -54,7 +54,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Movies.html">
+                <a class="nav-link" aria-current="page" href="Movies.html">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 0 1-1.125-1.125M3.375 19.5h1.5C5.496 19.5 6 18.996 6 18.375m-3.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-1.5A1.125 1.125 0 0 1 18 18.375M20.625 4.5H3.375m17.25 0c.621 0 1.125.504 1.125 1.125M20.625 4.5h-1.5C18.504 4.5 18 5.004 18 5.625m3.75 0v1.5c0 .621-.504 1.125-1.125 1.125M3.375 4.5c-.621 0-1.125.504-1.125 1.125M3.375 4.5h1.5C5.496 4.5 6 5.004 6 5.625m-3.75 0v1.5c0 .621.504 1.125 1.125 1.125m0 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m2.625-2.625C5.496 8.25 6 7.746 6 7.125v-1.5M4.875 8.25C5.496 8.25 6 8.754 6 9.375v1.5m0-5.25v5.25m0-5.25C6 5.004 6.504 4.5 7.125 4.5h9.75c.621 0 1.125.504 1.125 1.125m1.125 2.625h1.5m-1.5 0A1.125 1.125 0 0 1 18 7.125v-1.5m1.125 2.625c-.621 0-1.125.504-1.125 1.125v1.5m2.625-2.625c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125M18 5.625v5.25M7.125 12h9.75m-9.75 0A1.125 1.125 0 0 1 6 10.875M7.125 12C6.504 12 6 12.504 6 13.125m0-2.25C6 11.496 5.496 12 4.875 12M18 10.875c0 .621-.504 1.125-1.125 1.125M18 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m-12 5.25v-5.25m0 5.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125m-12 0v-1.5c0-.621-.504-1.125-1.125-1.125M18 18.375v-5.25m0 5.25v-1.5c0-.621.504-1.125 1.125-1.125M18 13.125v1.5c0 .621.504 1.125 1.125 1.125M18 13.125c0-.621.504-1.125 1.125-1.125M6 13.125v1.5c0 .621-.504 1.125-1.125 1.125M6 13.125C6 12.504 5.496 12 4.875 12m-1.5 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M19.125 12h1.5m0 0c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h1.5m14.25 0h1.5" />
                   </svg>
@@ -62,7 +62,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Tickets.html">
+                <a class="nav-link" href="Tickets.html">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" />
                   </svg>
@@ -114,232 +114,9 @@
       </nav>
     </header>
 
-    <main class="container">
-      <!-- Section 1: Lịch ngày và giờ chiếu -->
-      <section class="showtimes mb-5">   
-        <h2 class="section-title">Mua vé xem phim</h2>
-        <div class="day-selector-container align-items-center">
-          <button class="slider-btn prev-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-            </svg>
-          </button>
-          <div class="day-selector row row-cols-3 row-cols-md-7 text-center">
-            <div class="col day" data-day="1">
-              <span>Th. 10</span>
-              <h3>28</h3>
-              <p>Thứ hai</p>
-            </div>
-            <div class="col day" data-day="2">
-                <span>Th. 10</span>
-                <h3>29</h3>
-                <p>Thứ ba</p>
-            </div>
-            <div class="col day" data-day="3">
-                <span>Th. 10</span>
-                <h3>30</h3>
-                <p>Thứ tư</p>
-            </div>
-            <div class="col day" data-day="4">
-                <span>Th. 10</span>
-                <h3>31</h3>
-                <p>Thứ năm</p>
-            </div>
-            <div class="col day" data-day="5">
-                <span>Th. 11</span>
-                <h3>01</h3>
-                <p>Thứ sáu</p>
-            </div>
-            <div class="col day" data-day="6">
-                <span>Th. 11</span>
-                <h3>02</h3>
-                <p>Thứ bảy</p>
-            </div>
-            <div class="col day" data-day="7">
-                <span>Th. 11</span>
-                <h3>03</h3>
-                <p>Chủ nhật</p>
-            </div>
-            <div class="col day" data-day="1">
-              <span>Th. 11</span>
-              <h3>04</h3>
-              <p>Thứ hai</p>
-            </div>
-            <div class="col day" data-day="2">
-                <span>Th. 11</span>
-                <h3>05</h3>
-                <p>Thứ ba</p>
-            </div>
-            <div class="col day" data-day="3">
-                <span>Th. 11</span>
-                <h3>06</h3>
-                <p>Thứ tư</p>
-            </div>
-            <div class="col day active" data-day="4">
-                <span>Th. 11</span>
-                <h3>07</h3>
-                <p>Thứ năm</p>
-            </div>
-            <div class="col day" data-day="5">
-                <span>Th. 11</span>
-                <h3>08</h3>
-                <p>Thứ sáu</p>
-            </div>
-            <div class="col day" data-day="6">
-                <span>Th. 11</span>
-                <h3>09</h3>
-                <p>Thứ bảy</p>
-            </div>
-            <div class="col day" data-day="7">
-                <span>Th. 11</span>
-                <h3>10</h3>
-                <p>Chủ nhật</p>
-            </div>
-          </div>
-          <button class="slider-btn next-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-          </svg>
-        </button>
-        </div>
-        
-        <!-- Danh sách phim và khung giờ -->
-        <div class="schedule-content d-flex">
-          <!-- Cột trái: Danh sách phim -->
-          <div class="movie-list-container">
-            <h5 class="text-center sticky-header">Danh Sách Phim</h5>
-            <ul class="movie-list">
-              <li class="movie-item btn" 
-                  data-movie="Despicable Me 4" 
-                  data-director="Chris Renaud" 
-                  data-year="2024" 
-                  data-genre="Animation, Comedy"
-                  data-times='["12:00", "14:00", "19:00"]'>
-                Despicable Me 4
-              </li>
-              <li class="movie-item btn" 
-                  data-movie="Venom: The Last Dance" 
-                  data-director="Kelly Marcel" 
-                  data-year="2024" 
-                  data-genre="Action, Sci-Fi"
-                  data-times='["18:00", "21:00"]'>
-                Venom: The Last Dance
-              </li>
-              <li class="movie-item btn" 
-                  data-movie="John Wick 4" 
-                  data-director="Chad Stahelski" 
-                  data-year="2024" 
-                  data-genre="Action, Thriller"
-                  data-times='["16:00", "19:00", "21:00"]'>
-                John Wick 4
-              </li>
-              <li class="movie-item btn" 
-                  data-movie="Transformers One" 
-                  data-director="Josh Cooley" 
-                  data-year="2024" 
-                  data-genre="Action, Adventure"
-                  data-times='["12:00", "14:00", "18:00"]'>
-                Transformers One
-              </li>
-              <li class="movie-item btn" 
-                  data-movie="The Wild Robot" 
-                  data-director="Lynne Solter" 
-                  data-year="2024" 
-                  data-genre="Animation, Adventure"
-                  data-times='["14:00", "16:00", "18:00"]'>
-                The Wild Robot
-              </li>
-              <!-- Thêm các phim mới -->
-              <li class="movie-item btn" 
-                  data-movie="Deadpool And Wolverine" 
-                  data-director="Shawn Levy" 
-                  data-year="2024" 
-                  data-genre="Action, Comedy"
-                  data-times='["12:00", "14:00", "18:00", "21:00"]'>
-                Deadpool And Wolverine
-              </li>
-              <li class="movie-item btn" 
-                  data-movie="Cô Dâu Hào Môn" 
-                  data-director="Nguyễn Quang Dũng" 
-                  data-year="2023" 
-                  data-genre="Romance, Drama"
-                  data-times='["12:00", "16:00", "19:00"]'>
-                Cô Dâu Hào Môn
-              </li>
-              <li class="movie-item btn" 
-                  data-movie="Ngày Xưa Có Một Chuyện Tình" 
-                  data-director="Nguyễn Nhật Ánh" 
-                  data-year="2023" 
-                  data-genre="Romance, Drama"
-                  data-times='["12:00", "14:00", "16:00", "18:00"]'>
-                Ngày Xưa Có Một Chuyện Tình
-              </li>
-              <li class="movie-item btn" 
-                  data-movie="Spirited Away" 
-                  data-director="Hayao Miyazaki" 
-                  data-year="2001" 
-                  data-genre="Animation, Fantasy"
-                  data-times='["16:00", "18:00", "21:00", "23:00"]'>
-                Spirited Away
-              </li>
-            </ul>
-          </div>
-
-          <!-- Cột phải: Danh sách khung giờ -->
-          <div class="time-list-container">
-            <h5 class="text-center">Giờ Chiếu</h5>
-            <div class="time-selector">
-              <div class="time-slot btn btn-outline-secondary" data-time="12:00">12:00</div>
-              <div class="time-slot btn btn-outline-secondary" data-time="14:00">14:00</div>
-              <div class="time-slot btn btn-outline-secondary" data-time="16:00">16:00</div>
-              <div class="time-slot btn btn-outline-secondary" data-time="18:00">18:00</div>
-              <div class="time-slot btn btn-outline-secondary" data-time="19:00">19:00</div>
-              <div class="time-slot btn btn-outline-secondary" data-time="21:00">21:00</div>
-              <div class="time-slot btn btn-outline-secondary" data-time="23:00">23:00</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="note text-center">
-          <p class="text-muted">Lưu ý: Khán giả dưới 13 tuổi chỉ chọn suất chiếu kết thúc trước 22h và khán giả dưới 16 tuổi chỉ chọn suất chiếu kết thúc trước 23h.</p>
-        </div>
-      </section>
-  
-      <!-- Section 2: Chọn ghế ngồi -->
-      <section class="seat-selection" id="hidden">
-        <h2 class="section-title">Chọn Ghế Ngồi</h2>     
-        <div class="seat-map-container">     
-          <div class="screen"></div> 
-          <p class="screen-label text-center">Màn hình</p> <!-- Chú thích màn hình -->
-          <div id="seat-map" class="seat-map mb-4"></div>
-            
-          <div class="legend d-flex justify-content-around mb-4">
-            <div class="legend-item"><span class="seat vip"></span> Ghế VIP</div>
-            <div class="legend-item"><span class="seat available"></span> Ghế thường</div>
-            <div class="legend-item"><span class="seat double-seat"></span> Ghế đôi</div>
-            <div class="legend-item"><span class="seat selected"></span> Ghế bạn chọn</div>
-            <div class="legend-item"><span class="seat booked"></span> Ghế đã đặt</div>
-          </div>
-        </div> 
-
-        <div class="summary-container text-center mb-4">
-          <div class="summary">
-            <div class="selected-seats-info">
-                <p class="label">Ghế đã chọn:</p>
-                <p class="value"><span id="total-seats">0</span> (<span id="selected-seats"></span>)</p>
-            </div>
-            <div class="total-amount-info">
-                <p class="label">Tổng tiền:</p>
-                <p class="value"><span id="total-amount">0đ</span></p>
-            </div>
-          </div>
-          
-          <div class="actions d-flex justify-content-center mt-3">
-              <button id="pay-button" class="btn btn-primary mx-2">Thanh toán</button>
-              <button id="back-button" class="btn btn-secondary mx-2">Quay lại</button>
-          </div>
-        </div>
-      </section>
-  </main>
+    <main>
+      
+    </main>
 
     <footer class="mt-5 py-4">
       <div class="container">
@@ -368,7 +145,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                     <path fill-rule="evenodd" d="M3 2.25a.75.75 0 0 0 0 1.5v16.5h-.75a.75.75 0 0 0 0 1.5H15v-18a.75.75 0 0 0 0-1.5H3ZM6.75 19.5v-2.25a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-.75.75h-3a.75.75 0 0 1-.75-.75ZM6 6.75A.75.75 0 0 1 6.75 6h.75a.75.75 0 0 1 0 1.5h-.75A.75.75 0 0 1 6 6.75ZM6.75 9a.75.75 0 0 0 0 1.5h.75a.75.75 0 0 0 0-1.5h-.75ZM6 12.75a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM10.5 6a.75.75 0 0 0 0 1.5h.75a.75.75 0 0 0 0-1.5h-.75Zm-.75 3.75A.75.75 0 0 1 10.5 9h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM10.5 12a.75.75 0 0 0 0 1.5h.75a.75.75 0 0 0 0-1.5h-.75ZM16.5 6.75v15h5.25a.75.75 0 0 0 0-1.5H21v-12a.75.75 0 0 0 0-1.5h-4.5Zm1.5 4.5a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Zm.75 2.25a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75v-.008a.75.75 0 0 0-.75-.75h-.008ZM18 17.25a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z" clip-rule="evenodd" />
                 </svg>
-                Địa chỉ: Tầng 3, TTTM MAHOLA, Đường ABC, Phường XYZ, Quận EFG, TP. Hà Nội, Việt Nam
+                Địa chỉ: Tầng 3, TTTM Soiech, Đường ABC, Phường XYZ, Quận 1, TP.HCM, Việt Nam
             </p>
             <p>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -405,8 +182,9 @@
     </svg>
       
   </div>
-    <script src="../Bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../Bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../JS/Header.js"></script>
-    <script src="../JS/Tickets.js"></script>
+    <script src="../JS/Movies.js"></script>
+    
   </body>
 </html>

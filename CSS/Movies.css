@@ -1,0 +1,134 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.tab.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.tab:not(.active):hover {
+  background-color: #f0f0f0;
+}
+
+.poster-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 40px 0;
+  padding: 20px;
+}
+
+.poster {
+  position: relative;
+  width: 210px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border: 3px solid #393e46;
+}
+
+.poster img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.poster-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.movie-title {
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.movie-details {
+  font-size: 14px;
+  color: #666;
+  border-top: 1px solid #393e46; /* Đường gạch ngang */
+  margin-top: 8px; /* Khoảng cách giữa tên và đường gạch ngang */
+  padding-top: 8px; /* Khoảng cách từ đường gạch ngang đến thông tin */
+}
+
+.poster-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 50%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.poster:hover img {
+  opacity: 0.3;
+}
+
+.poster:hover .poster-buttons {
+  opacity: 1;
+}
+
+.poster-buttons button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.poster-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.show-more {
+  width: 100%;
+  max-width: 200px; /* Đảm bảo không quá to */
+  margin: 20px auto; /* Canh giữa theo chiều ngang */
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  display: none; /* Ẩn nút theo mặc định */
+}
+
+.show-more:hover {
+  background-color: #0056b3; /* Đổi màu khi hover */
+}

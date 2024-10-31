@@ -52,3 +52,23 @@ window.addEventListener("scroll", () => {
     scrollToTopBtn.style.display = "none"; // Ẩn nút
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const headerLoginButton = document.getElementById("headerLogin");
+
+  // Kiểm tra trạng thái đăng nhập từ localStorage
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  if (isLoggedIn === "true") {
+    // Nếu người dùng đã đăng nhập, đổi nút thành "Tài Khoản"
+    headerLoginButton.textContent = "Tài Khoản";
+    headerLoginButton.onclick = function () {
+      location.href = "Account.html"; // Dẫn đến trang tài khoản
+    };
+  } else {
+    // Nếu chưa đăng nhập, giữ nguyên nút "Đăng Nhập"
+    headerLoginButton.onclick = function () {
+      location.href = "Register_Login.html"; // Dẫn đến trang đăng nhập
+    };
+  }
+});

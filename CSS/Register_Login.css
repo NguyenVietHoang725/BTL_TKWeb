@@ -1,3 +1,10 @@
+:root {
+  --primary-color: #512da8;
+  --secondary-color: #5c6bc0;
+  --error-color: red;
+  --success-color: green;
+}
+
 .auth-container {
   background-color: #fff;
   border-radius: 30px;
@@ -5,7 +12,7 @@
   position: relative;
   overflow: hidden;
   max-width: 800px;
-  min-height: 540px;
+  min-height: 600px;
   width: 100%;
   margin: 0 auto;
 }
@@ -29,7 +36,7 @@
 }
 
 .auth-container button {
-  background-color: #512da8;
+  background-color: var(--primary-color);
   color: #fff;
   font-size: 12px;
   padding: 10px 45px;
@@ -76,19 +83,13 @@
   transition: all 0.6s ease-in-out;
 }
 
-.auth-sign-in {
+.auth-sign-in,
+.auth-sign-up {
   left: 0;
-  z-index: 2;
 }
 
 .auth-container.active .auth-sign-in {
   transform: translateX(100%);
-}
-
-.auth-sign-up {
-  left: 0;
-  opacity: 0;
-  z-index: 1;
 }
 
 .auth-container.active .auth-sign-up {
@@ -98,38 +99,84 @@
   animation: move 0.6s;
 }
 
-.notification-box {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  background-color: #4caf50; /* Màu nền thông báo */
-  color: white;
-  font-size: 18px;
-  border-radius: 8px;
-  text-align: center;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.notification-box.d-none {
-  display: none;
+.form-group {
+  width: 95%;
+  padding: 0.3em;
 }
 
 .password-container {
   width: 100%;
-  position: relative; /* Để con mắt có thể được định vị tuyệt đối */
+  padding: 0.7em;
+  position: relative;
 }
 
-.eye-icon {
+.eye-icon,
+.eye-icon-signin {
   position: absolute; /* Đặt con mắt ở vị trí tuyệt đối */
-  right: 10px; /* Khoảng cách từ bên phải */
-  top: 50%; /* Căn giữa theo chiều dọc */
+  right: 20px; /* Khoảng cách từ bên phải */
+  top: 43%; /* Căn giữa theo chiều dọc */
   transform: translateY(-50%); /* Căn giữa chính xác */
   cursor: pointer; /* Hiển thị con trỏ khi di chuột */
   width: 20px; /* Kích thước biểu tượng */
   height: 20px; /* Kích thước biểu tượng */
+}
+
+.eye-icon-signin {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.error-message {
+  display: block;
+  color: var(--error-color);
+  font-size: small;
+  height: 1.2em;
+  margin-top: 0.2em;
+}
+
+.success-message {
+  display: block;
+  color: var(--success-color);
+  font-size: small;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.success-box {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.success-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.success-content p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.success-content button {
+  padding: 8px 16px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
 }
 
 @keyframes move {
@@ -163,9 +210,13 @@
 }
 
 .auth-toggle {
-  background-color: #512da8;
+  background-color: var(--primary-color);
   height: 100%;
-  background: linear-gradient(to right, #5c6bc0, #512da8);
+  background: linear-gradient(
+    to right,
+    var(--secondary-color),
+    var(--primary-color)
+  );
   color: #fff;
   position: relative;
   left: -100%;
@@ -211,41 +262,34 @@
   transform: translateX(200%);
 }
 
-/* Kích thước chữ cho thông báo lỗi */
 .text-danger {
-  font-size: 0.875rem; /* Thay đổi kích thước chữ tùy chỉnh cho thông báo lỗi */
-  color: red; /* Màu đỏ cho thông báo lỗi */
+  font-size: 0.875rem;
+  color: var(--error-color);
 }
 
-/* Kích thước chữ cho thông báo thành công */
 .text-success {
-  font-size: 0.875rem; /* Thay đổi kích thước chữ tùy chỉnh cho thông báo thành công */
-  color: green; /* Màu xanh cho thông báo thành công */
+  font-size: 0.875rem;
+  color: var(--success-color);
 }
-
-/* Base styles remain the same */
 
 @media (max-width: 768px) {
   .auth-container {
     max-width: 100%;
-    height: auto; /* Set to auto to allow dynamic height based on content */
+    height: auto;
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    padding: 20px; /* Add some padding */
+    flex-direction: column;
+    padding: 20px;
     overflow: hidden;
   }
 
-  /* Adjust form container to full width and auto height */
   .auth-form-container {
-    width: 100%; /* Full width for forms */
-    transition: all 0.6s ease-in-out;
+    width: 100%;
     position: relative;
     z-index: 2;
     height: auto;
-    display: none; /* Hide by default */
+    display: none;
   }
 
-  /* Show active form */
   .auth-container.active .auth-sign-in,
   .auth-container .auth-sign-in {
     display: block;
@@ -260,43 +304,25 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: auto; /* Allow the toggle to adjust its height */
+    height: auto;
     z-index: 1000;
-    margin-bottom: 20px; /* Space between the toggle and forms */
+    margin-bottom: 20px;
   }
 
   .auth-toggle {
     width: 100%;
     height: auto;
     position: relative;
-    transform: translateY(0); /* Stay in place */
-    transition: all 0.6s ease-in-out;
-  }
-
-  .auth-container.active .auth-toggle {
-    transform: translateY(0); /* No slide effect on the toggle */
-  }
-
-  /* Adjust the toggle panels */
-  .auth-toggle-panel {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px 20px;
-    text-align: center;
-    transition: all 0.6s ease-in-out;
+    transform: translateY(0);
   }
 
   .auth-sign-in,
   .auth-sign-up {
     width: 100%;
-    height: auto; /* Dynamic height */
+    height: auto;
     padding: 20px;
   }
 
-  /* For the slide down effect */
   .auth-container .auth-sign-up {
     transform: translateY(-100%);
     opacity: 0;
@@ -311,17 +337,6 @@
   .auth-container.active .auth-sign-up {
     transform: translateY(0);
     opacity: 1;
-    transition: all 0.6s ease-in-out;
-    z-index: 5;
-  }
-
-  .auth-container.active .auth-sign-in {
-    display: none; /* Hide sign-in when register is active */
-  }
-
-  .auth-container .auth-sign-in {
-    display: block;
-    transform: translateY(0);
-    opacity: 1;
+    transition: all 0.6s ease;
   }
 }

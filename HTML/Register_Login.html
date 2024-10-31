@@ -120,19 +120,25 @@
       <section class="login-section py-4">
         <div class="auth-container container-fluid d-flex justify-content-center align-items-center" id="container">
             <div class="auth-form-container auth-sign-up col-12 col-md-6">
-                <form>
-                    <h1>Tạo Tài Khoản</h1>
+                <form id="signup-form">
+                  <h1>Tạo Tài Khoản</h1>
+                  <div class="form-group">
                     <input type="text" id="signup-name" class="form-control" placeholder="Họ và tên" />
-                    <small id="signup-name-error" class="text-danger"></small>
-                    <small id="signup-name-success" class="text-success"></small>
+                    <span class="error-message" id="signup-name-error"></span>
+                    <span class="success-message" id="signup-name-success"></span>
+                  </div>
 
+                  <div class="form-group">
                     <input type="email" id="signup-email" class="form-control" placeholder="Email" />
-                    <small id="signup-email-error" class="text-danger"></small>
-                    <small id="signup-email-success" class="text-success"></small>
+                    <span class="error-message" id="signup-email-error"></span>
+                    <span class="success-message" id="signup-email-success"></span>
+                  </div>
 
+                  <div class="form-group">
                     <input type="text" id="signup-phone" class="form-control" placeholder="Số điện thoại" />
-                    <small id="signup-phone-error" class="text-danger"></small>
-                    <small id="signup-phone-success" class="text-success"></small>
+                    <span class="error-message" id="signup-phone-error"></span>
+                    <span class="success-message" id="signup-phone-success"></span>
+                  </div>
 
                     <div class="password-container">
                       <input type="password" id="signup-password" class="form-control" placeholder="Mật khẩu" />
@@ -140,42 +146,49 @@
                           <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
                           <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                       </svg>
+                      <span class="error-message" id="signup-password-error"></span>
+                      <span class="success-message" id="signup-password-success"></span>
                   </div>
-                    <small id="signup-password-error" class="text-danger"></small>
-                    <small id="signup-password-success" class="text-success"></small>
 
                     <div class="password-container">
                       <input type="password" id="signup-confirm-password" class="form-control" placeholder="Xác nhận mật khẩu" />
+                      
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="eye-icon" id="toggle-confirm-password-visibility">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
                           <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                       </svg>
+                      <span class="error-message" id="signup-confirm-password-error"></span>
+                      <span class="success-message" id="signup-confirm-password-success"></span>
                   </div>
-                    <small id="signup-confirm-password-error" class="text-danger"></small>
-                    <small id="signup-confirm-password-success" class="text-success"></small>
-
-                    <button id="signup-submit" class="btn btn-primary mt-3 w-100">Đăng ký</button>
+                  
+                  <button id="signup-submit" type="button" class="btn btn-primary mt-3 w-75" onclick="validateSignUpForm()">Đăng ký</button>
+                  
+                  <div id="success-box" class="success-box">
+                    <div class="success-content">
+                        <p>Tạo tài khoản thành công!</p>
+                        <button onclick="closeSuccessBox()">OK</button>
+                    </div>
+                </div>
                 </form>
             </div>
 
-            <!-- Phần đăng nhập không cần thay đổi -->
             <div class="auth-form-container auth-sign-in col-12 col-md-6">
-              <form>
+              <form id="signin-form">
                   <h1>Đăng Nhập</h1>
-                  <input type="text" id="signin-identifier" class="form-control" placeholder="Email hoặc Số điện thoại" />
-                  <small id="signin-identifier-error" class="text-danger"></small>
-          
+                  <div class="form-group">
+                    <input type="text" id="signin-identifier" class="form-control" placeholder="Email hoặc Số điện thoại" />
+                  </div>
+        
                   <div class="password-container">
                     <input type="password" id="signin-password" class="form-control" placeholder="Mật khẩu" />
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="eye-icon" id="toggle-signin-password-visibility">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="eye-icon-signin" id="toggle-signin-password-visibility">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>
                 </div>
-                  <small id="signin-password-error" class="text-danger"></small>
-          
+                 
                   <a href="#">Quên mật khẩu?</a>
-                  <button class="btn btn-primary mt-3 w-100">Đăng Nhập</button>
+                  <button id="signin-submit" type="button" class="btn btn-primary mt-3 w-75" onclick="validateSignInForm()">Đăng Nhập</button>
               </form>
           </div>
             
@@ -194,14 +207,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Hộp thông báo -->
-            <div id="notification-box" class="notification-box d-none">
-              <p id="notification-message"></p>
-            </div>
         </div>
-
-    </section>
-  
+    </section> 
     </main>
 
     <footer class="mt-5 py-4">

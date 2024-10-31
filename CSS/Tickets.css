@@ -1,0 +1,400 @@
+.showtimes {
+  padding: 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #393e46;
+  text-transform: uppercase;
+}
+
+.day-selector-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Khoảng cách giữa các nút và thanh ngày */
+  width: 100%;
+  overflow: hidden;
+}
+
+.day-selector {
+  width: 700px;
+  border: 5px solid #393e46;
+  border-radius: 5px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+/* Định dạng chung cho nút SVG */
+.slider-btn {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-btn svg.size-6 {
+  width: 48px;
+  height: 48px;
+  color: #333; /* Màu sắc cho SVG, có thể thay đổi theo theme */
+  transition: color 0.2s ease-in-out;
+}
+
+/* Hiệu ứng khi hover vào nút SVG */
+.slider-btn:hover svg {
+  color: #007bff; /* Màu khi hover, có thể thay đổi */
+}
+
+.day {
+  flex: 1;
+  max-width: 100px;
+  background-color: #686d76;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px 0;
+  border-right: 2px solid #393e46;
+  transition: background-color 0.3s ease;
+}
+
+.day:nth-child(7) {
+  border-right: none;
+}
+
+.day:last-child {
+  border-right: none;
+}
+
+.day.active {
+  color: #393e46;
+  background-color: #ffd700;
+}
+
+.schedule-content {
+  display: flex;
+  justify-content: center; /* Căn giữa toàn bộ bố cục */
+  gap: 10px; /* Giảm khoảng cách giữa các cột */
+  padding: 20px 0 0 15px; /* Giảm padding tổng thể */
+}
+
+/* Cột trái: Danh sách phim */
+.movie-list-container {
+  max-height: 300px; /* Giới hạn chiều cao */
+  overflow-y: auto; /* Cho phép cuộn */
+  text-align: left; /* Căn trái nội dung */
+  width: 30%; /* Chiều rộng cột */
+  border: 4px solid #393e46; /* Viền đỏ cho cột */
+  box-sizing: border-box; /* Bao gồm padding và border trong kích thước */
+  position: relative; /* Đảm bảo position sticky hoạt động */
+}
+
+.sticky-header {
+  position: sticky; /* Giữ tiêu đề ở trên cùng khi cuộn */
+  top: 0; /* Vị trí trên cùng của container */
+  background-color: #686d76; /* Nền trắng cho dễ đọc */
+  z-index: 10; /* Đảm bảo tiêu đề không bị ẩn */
+  border-bottom: 4px solid #393e46; /* Viền dưới cho tiêu đề */
+}
+
+.movie-list {
+  list-style: none; /* Bỏ dấu đầu dòng */
+  padding: 0; /* Bỏ padding */
+  margin: 0; /* Bỏ margin */
+}
+
+.movie-list-container h5 {
+  padding: 10px 0; /* Khoảng cách trên và dưới cho tiêu đề */
+  font-weight: bold; /* Chữ đậm cho tiêu đề */
+  color: #fff; /* Màu chữ đỏ */
+}
+
+.movie-item {
+  padding: 10px; /* Padding cho mỗi mục phim */
+  margin: 8px 5px 5px 8px; /* Khoảng cách giữa các mục phim */
+  border: 1px solid transparent; /* Viền trong suốt ban đầu */
+  border-radius: 0;
+  cursor: pointer; /* Con trỏ khi di chuột */
+  transition: border-color 0.3s ease, background-color 0.3s ease; /* Hiệu ứng chuyển tiếp */
+}
+
+.movie-item:hover {
+  border-color: #393e46; /* Màu viền khi được chọn */
+  background-color: #fffbe0;
+}
+
+.movie-item.selected {
+  border-color: #393e46;
+  background-color: #ffd700;
+}
+
+/* Thêm phần này để đảm bảo mục phim xếp thẳng hàng theo cột */
+.movie-item {
+  display: block; /* Đảm bảo các mục phim hiển thị theo dạng block */
+}
+
+/* Cột phải: Danh sách khung giờ */
+.time-list-container {
+  text-align: center;
+  width: 50%;
+  max-width: 350px;
+  border: 4px solid #393e46;
+  box-sizing: border-box;
+}
+
+.time-list-container h5 {
+  padding: 10px; /* Khoảng cách giữa tiêu đề và danh sách giờ chiếu */
+  font-weight: bold;
+  color: #fff;
+  background-color: #686d76;
+  border-bottom: 4px solid #393e46; /* Viền dưới cho tiêu đề */
+}
+
+.time-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.time-slot {
+  max-width: 90px;
+  flex: 1 1 90px;
+  padding: 10px 15px;
+  border: 2px solid #393e46;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+  transition: background-color 0.3s ease;
+}
+
+.time-slot.active {
+  display: inline-block;
+  background-color: #393e46;
+  color: #fff;
+}
+
+.time-slot:hover {
+  background-color: #fffbe0;
+  color: #393e46;
+}
+
+.time-slot.selected {
+  background-color: #ffd700;
+  color: #393e46;
+}
+
+.note {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ff6600;
+}
+
+/* Responsive - Điều chỉnh kích thước chữ và padding cho các màn hình nhỏ */
+@media (max-width: 768px) {
+  .day {
+    font-size: 14px;
+    padding: 8px 0; /* Giảm padding cho các ô */
+  }
+}
+
+@media (max-width: 576px) {
+  .day {
+    font-size: 12px;
+    padding: 6px 0; /* Giảm padding cho các ô */
+  }
+}
+
+/* Container của các hàng ghế */
+#seat-map {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Khoảng cách giữa các hàng */
+}
+
+/* Căn chỉnh mỗi hàng ghế */
+.seat-map .row {
+  display: flex;
+  gap: 5px; /* Khoảng cách giữa các ghế */
+  justify-content: center; /* Căn giữa hàng ghế */
+}
+
+/* Ghế thường */
+.seat.single-seat {
+  width: 40px; /* Kích thước chiều rộng ghế */
+  height: 40px; /* Kích thước chiều cao ghế */
+  background-color: #d3d3d3; /* Màu xám cho ghế thường */
+  border: 1px solid #888; /* Đường viền ghế */
+  text-align: center; /* Căn giữa văn bản */
+  line-height: 40px; /* Căn giữa văn bản theo chiều dọc */
+  cursor: pointer; /* Hiệu ứng con trỏ khi di chuột */
+  font-size: 14px; /* Kích thước chữ */
+  border-radius: 5px; /* Bo góc cho ghế */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu khi di chuột */
+}
+
+/* Ghế VIP */
+.seat.vip {
+  width: 40px; /* Kích thước ghế VIP giống ghế thường */
+  height: 40px; /* Kích thước ghế VIP giống ghế thường */
+  background-color: #ffd700; /* Màu vàng cho ghế VIP */
+  border: 1px solid #888; /* Đường viền ghế VIP */
+  text-align: center; /* Căn giữa văn bản */
+  line-height: 40px; /* Căn giữa văn bản theo chiều dọc */
+  cursor: pointer; /* Hiệu ứng con trỏ khi di chuột */
+  font-size: 14px; /* Kích thước chữ */
+  border-radius: 5px; /* Bo góc cho ghế */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu khi di chuột */
+}
+
+/* Ghế đôi */
+.seat.double-seat {
+  width: 85px; /* Rộng hơn ghế đơn */
+  height: 40px; /* Chiều cao giống ghế đơn */
+  background-color: #ff69b4; /* Màu hồng cho ghế đôi */
+  border: 1px solid #888; /* Đường viền ghế */
+  text-align: center; /* Căn giữa văn bản */
+  line-height: 40px; /* Căn giữa văn bản theo chiều dọc */
+  cursor: pointer; /* Hiệu ứng con trỏ khi di chuột */
+  font-size: 14px; /* Kích thước chữ */
+  border-radius: 5px; /* Bo góc cho ghế */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu khi di chuột */
+}
+
+/* Ghế đã đặt */
+.seat.booked {
+  color: #fff;
+  background-color: #000; /* Màu cho ghế đã đặt */
+  cursor: not-allowed; /* Không cho phép click */
+}
+
+/* Ghế đã chọn */
+.seat.selected {
+  background-color: #4caf50; /* Màu xanh lá cho ghế đã chọn */
+  color: #fff; /* Màu chữ trắng */
+}
+
+/* Hover cho ghế khả dụng */
+.seat.available:hover:not(.booked):not(.selected) {
+  background-color: #b3e5fc; /* Màu cho ghế khả dụng khi hover */
+}
+
+/* Đường ngang tượng trưng cho màn hình */
+.screen {
+  width: 75%; /* Chiều rộng 75% */
+  height: 20px; /* Chiều cao đường ngang */
+  background-color: #333; /* Màu nền của màn hình */
+  margin: 10px auto; /* Khoảng cách dưới đường ngang và căn giữa */
+}
+
+/* Chú thích màn hình */
+.screen-label {
+  margin-bottom: 50px; /* Khoảng cách dưới chú thích màn hình */
+  font-weight: bold; /* Làm đậm chữ */
+}
+
+/* Căn chỉnh lại các ô ghế trong legend */
+.legend-item {
+  display: flex; /* Hiển thị các item trong legend dưới dạng flex */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  margin-right: 15px; /* Khoảng cách giữa các item */
+}
+
+/* Căn chỉnh ô ghế và chữ */
+.legend-item span {
+  width: 30px; /* Chiều rộng đồng nhất cho ô ghế */
+  height: 30px; /* Chiều cao đồng nhất cho ô ghế */
+  display: inline-block; /* Hiển thị dưới dạng khối */
+  border: 1px solid #888; /* Viền cho các ô */
+  margin-right: 5px; /* Khoảng cách giữa ô ghế và chữ */
+}
+
+/* Căn chỉnh lại các ô ghế trong legend */
+.legend .seat {
+  width: 30px; /* Chiều rộng đồng nhất */
+  height: 30px; /* Chiều cao đồng nhất */
+  display: inline-block; /* Hiển thị dưới dạng khối */
+  border: 1px solid #888; /* Viền cho các ô */
+  margin-right: 5px; /* Khoảng cách giữa các ô */
+}
+
+/* Ghế VIP trong legend */
+.legend .seat.vip {
+  border-radius: 0;
+  background-color: #ffd700; /* Màu vàng cho ghế VIP */
+}
+
+/* Ghế thường trong legend */
+.legend .seat.available {
+  background-color: #d3d3d3; /* Màu xám cho ghế thường */
+}
+
+/* Ghế đôi trong legend */
+.legend .seat.double-seat {
+  border-radius: 0;
+  background-color: #ff69b4; /* Màu hồng cho ghế đôi */
+}
+
+/* Ghế đã chọn trong legend */
+.legend .seat.selected {
+  background-color: #4caf50; /* Màu xanh lá cho ghế đã chọn */
+}
+
+/* Ghế đã đặt trong legend */
+.legend .seat.booked {
+  cursor: auto;
+  background-color: #000; /* Màu đen cho ghế đã đặt */
+}
+
+/* Border cho phần bảng ghế */
+.seat-map-container {
+  border: 2px solid #888; /* Đường viền cho bảng ghế */
+  padding: 20px; /* Khoảng cách bên trong */
+  border-radius: 10px; /* Bo góc cho border */
+  margin-top: 20px; /* Khoảng cách dưới bảng ghế */
+  margin-bottom: 20px; /* Khoảng cách dưới bảng ghế */
+}
+
+/* Container cho thông tin tổng kết */
+.summary-container {
+  width: 80%; /* Điều chỉnh kích thước ở đây (ví dụ: 80%) */
+  max-width: 600px; /* Đặt giới hạn tối đa nếu cần */
+  margin: 0 auto; /* Căn giữa container */
+  padding: 15px; /* Khoảng cách bên trong */
+  border: 2px solid #888; /* Đường viền cho container */
+  border-radius: 10px; /* Bo góc cho viền */
+  background-color: #f9f9f9; /* Màu nền nhẹ cho container */
+}
+
+/* Phần tổng kết */
+.summary {
+  margin-bottom: 15px; /* Khoảng cách dưới phần tổng kết */
+}
+
+/* Thông tin ghế đã chọn và tổng tiền */
+.selected-seats-info,
+.total-amount-info {
+  margin: 10px 0; /* Khoảng cách giữa các phần */
+  padding: 10px; /* Khoảng cách bên trong */
+  border-radius: 5px; /* Bo góc cho từng phần */
+  background-color: #e0e0e0; /* Màu nền nhẹ cho các phần thông tin */
+}
+
+/* Nhãn và giá trị */
+.label {
+  font-weight: bold; /* Đậm cho nhãn */
+  margin: 0; /* Bỏ khoảng cách mặc định */
+}
+
+.value {
+  font-size: 18px; /* Kích thước chữ lớn hơn cho giá trị */
+  color: #333; /* Màu chữ tối cho giá trị */
+}
