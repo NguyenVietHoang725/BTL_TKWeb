@@ -23,171 +23,130 @@ document.querySelector(".next-btn").addEventListener("click", () => {
     dayElements.length - daysToShow,
     currentStartIndex + daysToShow
   );
-  updateDaysDisplay(); // Cần gọi hàm này để cập nhật hiển thị
+  updateDaysDisplay();
 });
 
 // Hiển thị nhóm đầu tiên khi trang được tải
 updateDaysDisplay();
 
 const timeSlots = document.querySelectorAll(".time-slot");
-const hiddenSection = document.getElementById("hidden");
-const iframe = document.getElementById("hiddenPage");
+const hiddenSection = document.getElementById("hidden"); // Phần chọn ghế
 const movieElements = Array.from(document.querySelectorAll(".movie-item"));
 const movieSelectSection = document.getElementById("movie-select");
 
 let selectedDay = null;
 let selectedMovie = null;
+let selectedTime = null;
 
 // Thiết lập sự kiện click cho từng ngày
 dayElements.forEach((day) => {
   day.addEventListener("click", () => {
     const dayNum = parseInt(day.getAttribute("data-day"));
-
-    // Xóa trạng thái active của tất cả các ngày
     dayElements.forEach((d) => d.classList.remove("active"));
     day.classList.add("active");
-
-    // Ghi lại ngày đã chọn
     selectedDay = dayNum;
-
-    // Hiển thị phim để chọn
     movieSelectSection.classList.remove("hidden");
-
-    // Reset phim và khung giờ
     resetMoviesAndTimeSlots();
-    hiddenSection.classList.remove("active");
+    hiddenSection.style.display = "none"; // Ẩn phần chọn ghế khi chưa có lựa chọn
   });
 });
 
-// Hàm reset phim và khung giờ
 const resetMoviesAndTimeSlots = () => {
-  selectedMovie = null; // Đặt lại selectedMovie về null
+  selectedMovie = null;
   movieElements.forEach((movie) => {
-    movie.classList.remove("selected"); // Bỏ chọn tất cả phim
+    movie.classList.remove("selected");
   });
-
-  resetTimeSlots(); // Reset khung giờ
+  resetTimeSlots();
 };
 
-// Hàm reset khung giờ
 const resetTimeSlots = () => {
+  selectedTime = null;
   timeSlots.forEach((slot) => {
     slot.classList.remove("active");
     slot.classList.remove("selected");
   });
 };
 
-// Thiết lập sự kiện click cho từng phim
+// Khi chọn phim
 movieElements.forEach((movie) => {
   movie.addEventListener("click", () => {
-    // Nếu phim đã được chọn, bỏ chọn
     if (selectedMovie === movie.getAttribute("data-movie")) {
-      selectedMovie = null; // Bỏ chọn phim
-      movie.classList.remove("selected"); // Bỏ chọn màu cho phim
-      resetTimeSlots(); // Reset khung giờ
-      hiddenSection.classList.remove("active"); // Ẩn thông tin ẩn
-      return; // Thoát khỏi hàm
+      selectedMovie = null;
+      movie.classList.remove("selected");
+      resetTimeSlots();
+      updateHiddenSection();
+      return;
     }
 
-    // Ghi lại phim đã chọn
     selectedMovie = movie.getAttribute("data-movie");
-    const movieTimes = JSON.parse(movie.getAttribute("data-times")); // Lấy khung giờ của phim
-
-    // Xóa màu 'selected' cho tất cả các phim
+    const movieTimes = JSON.parse(movie.getAttribute("data-times"));
     movieElements.forEach((m) => m.classList.remove("selected"));
-    // Thêm màu cho phim được chọn
     movie.classList.add("selected");
+    resetTimeSlots();
 
-    // Ẩn tất cả các khung giờ trước đó
-    resetTimeSlots(); // Gọi hàm reset để ẩn tất cả khung giờ
-
-    // Hiển thị khung giờ phù hợp cho từng ngày
     timeSlots.forEach((slot) => {
       const time = slot.getAttribute("data-time");
-
-      // Hiển thị khung giờ chỉ khi đã chọn ngày và phim
-      if (selectedDay) {
-        // Hiển thị khung giờ nếu có trong danh sách của phim
-        if (movieTimes.includes(time)) {
-          slot.classList.add("active");
-        }
+      if (selectedDay && movieTimes.includes(time)) {
+        slot.classList.add("active");
       }
     });
 
-    // Cập nhật thông tin ẩn
-    updateHiddenSection(); // Cập nhật thông tin nếu có phim đã chọn
+    updateHiddenSection(); // Gọi lại hàm sau khi chọn phim
   });
 });
 
-// Sự kiện click vào khung giờ để đổi màu khi chọn
+// Khi chọn giờ chiếu
 timeSlots.forEach((slot) => {
   slot.addEventListener("click", () => {
-    // Chỉ cho phép chọn các khung giờ đã được hiển thị (active)
     if (slot.classList.contains("active")) {
-      // Nếu khung giờ đã được chọn, bỏ chọn
       if (slot.classList.contains("selected")) {
-        slot.classList.remove("selected"); // Bỏ chọn khung giờ
-        iframe.style.display = "none"; // Ẩn iframe
-        hiddenSection.classList.remove("active"); // Ẩn thông tin ẩn
-        return; // Thoát khỏi hàm
+        slot.classList.remove("selected");
+        selectedTime = null;
+        updateHiddenSection();
+        return;
       }
-
-      // Xóa màu 'selected' cho tất cả các khung giờ
       timeSlots.forEach((s) => s.classList.remove("selected"));
-      // Thêm màu cho khung giờ được chọn
       slot.classList.add("selected");
-
-      // Hiển thị trang ẩn trong iframe khi chọn giờ chiếu
-      iframe.style.display = "block";
-
-      // Cập nhật thông tin ẩn
-      updateHiddenSection();
+      selectedTime = slot.getAttribute("data-time");
+      updateHiddenSection(); // Gọi lại hàm sau khi chọn giờ
     }
   });
 });
 
-// Mặc định chọn ngày đầu tiên khi load trang
+// Thực hiện click vào ngày đầu tiên khi trang tải
 document.querySelector('.day[data-day="1"]').click();
 
-// Lưu thông tin ngày giờ vào localStorage để sử dụng khi thanh toán
 function updateHiddenSection() {
-  if (selectedDay && selectedMovie) {
-    hiddenSection.classList.add("active");
-    // Lưu thông tin ngày và phim vào localStorage
+  const seatSelection = document.getElementById("hidden");
+
+  if (selectedDay && selectedMovie && selectedTime) {
+    seatSelection.style.display = "block"; // Hiển thị phần chọn ghế
     localStorage.setItem("selectedDay", selectedDay);
     localStorage.setItem("selectedMovie", selectedMovie);
+    localStorage.setItem("selectedTime", selectedTime);
   } else {
-    hiddenSection.classList.remove("active"); // Ẩn thông tin nếu không có ngày hoặc phim đã chọn
+    seatSelection.style.display = "none"; // Ẩn phần chọn ghế nếu thiếu thông tin
   }
 }
 
 // Constants for pricing
-const PRICE_THUONG = 50000;
-const PRICE_VIP = 70000;
+const numRows = 8;
+const numCols = 15;
+const doubleSeatCols = 8;
+const bookedSeats = ["F10", "G10", "F14", "H13-14"];
 
-// Số lượng hàng và cột
-const numRows = 8; // Số hàng từ A đến H
-const numCols = 15; // Số cột ghế đơn
-const doubleSeatCols = 8; // Số cặp ghế đôi ở hàng H
-
-// Danh sách ghế đã đặt (ví dụ)
-const bookedSeats = ["F10", "G10", "F14", "H13-14"]; // Ghế đã đặt
-
-// Tạo ghế và hàng động
 function createSeats() {
   const seatMap = document.getElementById("seat-map");
-  const alphabet = "ABCDEFGH".split(""); // Hàng ghế từ A đến H
+  const alphabet = "ABCDEFGH".split("");
 
   for (let i = 0; i < numRows; i++) {
     const row = document.createElement("div");
     row.classList.add("row");
 
-    // Nếu là hàng H, tạo ghế đôi
     if (alphabet[i] === "H") {
       for (let j = 1; j <= doubleSeatCols; j++) {
         const seat = document.createElement("div");
         seat.classList.add("seat", "double-seat");
-
         const seatId = `H${2 * j - 1}-${2 * j}`;
         seat.dataset.seatId = seatId;
         seat.innerText = seatId;
@@ -198,36 +157,23 @@ function createSeats() {
           seat.classList.add("available");
         }
 
-        // Gán sự kiện cho ghế
-        seat.addEventListener("click", () => {
-          if (seat.classList.contains("selected")) {
-            seat.classList.remove("selected");
-            handleSeatSelection(seat, "unselect");
-          } else if (!seat.classList.contains("booked")) {
-            seat.classList.add("selected");
-            handleSeatSelection(seat, "select");
-          }
-        });
-
+        seat.addEventListener("click", () => toggleSeatSelection(seat));
         row.appendChild(seat);
       }
     } else {
-      // Tạo ghế đơn cho các hàng A - G
       for (let j = 1; j <= numCols; j++) {
         const seat = document.createElement("div");
         seat.classList.add("seat", "single-seat");
-
         const seatId = `${alphabet[i]}${j}`;
         seat.dataset.seatId = seatId;
         seat.innerText = seatId;
 
-        // Kiểm tra xem ghế có phải là ghế VIP hay không
         if (
-          (alphabet[i] === "D" && j >= 5 && j <= 11) || // Ghế VIP từ D5 đến D11
-          (alphabet[i] === "E" && j >= 5 && j <= 11) || // Ghế VIP từ E5 đến E11
-          (alphabet[i] === "F" && j >= 5 && j <= 11) // Ghế VIP từ F5 đến F11
+          (alphabet[i] === "D" && j >= 5 && j <= 11) ||
+          (alphabet[i] === "E" && j >= 5 && j <= 11) ||
+          (alphabet[i] === "F" && j >= 5 && j <= 11)
         ) {
-          seat.classList.add("vip"); // Gán lớp VIP cho ghế
+          seat.classList.add("vip");
         }
 
         if (bookedSeats.includes(seatId)) {
@@ -236,17 +182,7 @@ function createSeats() {
           seat.classList.add("available");
         }
 
-        // Gán sự kiện cho ghế
-        seat.addEventListener("click", () => {
-          if (seat.classList.contains("selected")) {
-            seat.classList.remove("selected");
-            handleSeatSelection(seat, "unselect");
-          } else if (!seat.classList.contains("booked")) {
-            seat.classList.add("selected");
-            handleSeatSelection(seat, "select");
-          }
-        });
-
+        seat.addEventListener("click", () => toggleSeatSelection(seat));
         row.appendChild(seat);
       }
     }
@@ -254,5 +190,143 @@ function createSeats() {
   }
 }
 
-// Tạo giao diện ghế ngồi
+function toggleSeatSelection(seat) {
+  if (seat.classList.contains("selected")) {
+    seat.classList.remove("selected");
+  } else if (!seat.classList.contains("booked")) {
+    seat.classList.add("selected");
+  }
+}
+
 createSeats();
+
+// Định nghĩa giá vé cho từng loại ghế
+const TICKET_PRICES = {
+  regular: {
+    weekdays: {
+      beforeNoon: 55000,
+      afternoon: 70000,
+      evening: 80000,
+      lateNight: 65000,
+    },
+    weekends: {
+      beforeNoon: 70000,
+      afternoon: 80000,
+      evening: 90000,
+      lateNight: 75000,
+    },
+  },
+  vip: {
+    weekdays: {
+      beforeNoon: 65000,
+      afternoon: 75000,
+      evening: 85000,
+      lateNight: 70000,
+    },
+    weekends: {
+      beforeNoon: 80000,
+      afternoon: 85000,
+      evening: 95000,
+      lateNight: 80000,
+    },
+  },
+  double: {
+    weekdays: {
+      beforeNoon: 140000,
+      afternoon: 160000,
+      evening: 180000,
+      lateNight: 150000,
+    },
+    weekends: {
+      beforeNoon: 170000,
+      afternoon: 180000,
+      evening: 200000,
+      lateNight: 170000,
+    },
+  },
+};
+
+// Lấy loại thời gian cụ thể (cần được xác định theo yêu cầu của bạn)
+function getTimeType() {
+  // Giả sử bạn có một cách nào đó để xác định thời gian cụ thể, ví dụ từ input hoặc chọn giờ
+  // Đây là ví dụ:
+  const currentHour = new Date().getHours();
+
+  if (currentHour < 12) {
+    return "beforeNoon";
+  } else if (currentHour < 17) {
+    return "afternoon";
+  } else if (currentHour < 23) {
+    return "evening";
+  } else {
+    return "lateNight";
+  }
+}
+
+function getDayType() {
+  const currentDate = new Date();
+  const day = currentDate.getDay(); // 0: Chủ nhật, 1: Thứ 2, ..., 6: Thứ 7
+  // Giả định rằng thứ 2 đến thứ 5 là ngày trong tuần, còn thứ 6, thứ 7, chủ nhật là cuối tuần
+  return day >= 1 && day <= 5 ? "weekdays" : "weekends";
+}
+
+let selectedSeats = []; // Mảng lưu trữ ghế đã chọn
+let totalAmount = 0; // Tổng tiền
+
+function updateSelectedSeatsDisplay() {
+  const selectedSeatsElement = document.getElementById("selected-seats");
+  const totalSeatsElement = document.getElementById("total-seats");
+  const totalAmountElement = document.getElementById("total-amount");
+
+  // Cập nhật số ghế đã chọn
+  totalSeatsElement.textContent = selectedSeats.length;
+
+  // Hiển thị danh sách ghế đã chọn với dấu phẩy
+  const seatNumbers = selectedSeats.map((seat) => seat.textContent.trim());
+  selectedSeatsElement.textContent = seatNumbers.join(", "); // Nối các ghế với dấu phẩy
+
+  // Tính tổng tiền
+  totalAmount = calculateTotalAmount();
+  totalAmountElement.textContent = `${totalAmount}đ`;
+}
+
+// Hàm tính tổng tiền
+function calculateTotalAmount() {
+  let amount = 0;
+  const timeType = getTimeType(); // Lấy loại thời gian
+  const dayType = getDayType(); // Xác định ngày trong tuần (thứ 2 - thứ 5 hay cuối tuần)
+
+  selectedSeats.forEach((seat) => {
+    const seatType = seat.dataset.seatType; // Lấy loại ghế từ dữ liệu ghế
+
+    // Tính giá vé dựa trên loại ghế và thời gian
+    if (seatType === "vip") {
+      amount += TICKET_PRICES.vip[dayType][timeType];
+    } else if (seatType === "double") {
+      amount += TICKET_PRICES.double[dayType][timeType];
+    } else {
+      amount += TICKET_PRICES.regular[dayType][timeType];
+    }
+  });
+  return amount;
+}
+
+function toggleSeatSelection(seat) {
+  const seatType = seat.classList.contains("vip")
+    ? "vip"
+    : seat.classList.contains("double-seat")
+    ? "double"
+    : "regular";
+
+  // Kiểm tra ghế đã được chọn hay chưa
+  if (seat.classList.contains("selected")) {
+    seat.classList.remove("selected");
+    selectedSeats = selectedSeats.filter((s) => s !== seat); // Xoá ghế đã chọn
+  } else if (!seat.classList.contains("booked")) {
+    seat.classList.add("selected");
+    seat.dataset.seatType = seatType; // Lưu loại ghế
+    selectedSeats.push(seat); // Thêm ghế vào danh sách đã chọn
+  }
+
+  updateSelectedSeatsDisplay(); // Cập nhật danh sách ghế đã chọn
+}

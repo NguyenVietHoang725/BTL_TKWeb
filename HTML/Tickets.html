@@ -305,40 +305,37 @@
       </section>
   
       <!-- Section 2: Chọn ghế ngồi -->
-      <section class="seat-selection" id="hidden">
-        <h2 class="section-title">Chọn Ghế Ngồi</h2>     
-        <div class="seat-map-container">     
-          <div class="screen"></div> 
-          <p class="screen-label text-center">Màn hình</p> <!-- Chú thích màn hình -->
-          <div id="seat-map" class="seat-map mb-4"></div>
-            
-          <div class="legend d-flex justify-content-around mb-4">
-            <div class="legend-item"><span class="seat vip"></span> Ghế VIP</div>
-            <div class="legend-item"><span class="seat available"></span> Ghế thường</div>
-            <div class="legend-item"><span class="seat double-seat"></span> Ghế đôi</div>
-            <div class="legend-item"><span class="seat selected"></span> Ghế bạn chọn</div>
-            <div class="legend-item"><span class="seat booked"></span> Ghế đã đặt</div>
-          </div>
-        </div> 
-
-        <div class="summary-container text-center mb-4">
-          <div class="summary">
-            <div class="selected-seats-info">
-                <p class="label">Ghế đã chọn:</p>
-                <p class="value"><span id="total-seats">0</span> (<span id="selected-seats"></span>)</p>
+      <section class="seat-selection" id="hidden" style="display: none;">
+        <h2 class="section-title">Chọn Ghế Ngồi</h2>
+        <div class="seat-map-container">
+            <div class="screen"></div>
+            <p class="screen-label text-center">Màn hình</p>
+            <div id="seat-map" class="seat-map mb-4"></div>
+            <div class="legend d-flex justify-content-around mb-4">
+                <div class="legend-item"><span class="seat vip"></span> Ghế VIP</div>
+                <div class="legend-item"><span class="seat available"></span> Ghế thường</div>
+                <div class="legend-item"><span class="seat double-seat"></span> Ghế đôi</div>
+                <div class="legend-item"><span class="seat selected"></span> Ghế bạn chọn</div>
+                <div class="legend-item"><span class="seat booked"></span> Ghế đã đặt</div>
             </div>
-            <div class="total-amount-info">
-                <p class="label">Tổng tiền:</p>
-                <p class="value"><span id="total-amount">0đ</span></p>
-            </div>
-          </div>
-          
-          <div class="actions d-flex justify-content-center mt-3">
-              <button id="pay-button" class="btn btn-primary mx-2">Thanh toán</button>
-              <button id="back-button" class="btn btn-secondary mx-2">Quay lại</button>
-          </div>
         </div>
-      </section>
+        <div class="summary-container text-center mb-4">
+            <div class="summary">
+                <div class="selected-seats-info">
+                    <p class="label">Ghế đã chọn:</p>
+                    <p class="value"><span id="total-seats">0</span> (<span id="selected-seats"></span>)</p>
+                </div>
+                <div class="total-amount-info">
+                    <p class="label">Tổng tiền:</p>
+                    <p class="value"><span id="total-amount">0đ</span></p>
+                </div>
+            </div>
+            <div class="actions d-flex justify-content-center mt-3">
+                <button id="pay-button" class="btn btn-primary mx-2">Thanh toán</button>
+                <button id="back-button" class="btn btn-secondary mx-2">Quay lại</button>
+            </div>
+        </div>
+    </section>
   </main>
 
     <footer class="mt-5 py-4">

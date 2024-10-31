@@ -220,6 +220,10 @@
   gap: 10px; /* Khoảng cách giữa các hàng */
 }
 
+.seat-selection.active {
+  display: block; /* Hiển thị khi có class `active` */
+}
+
 /* Căn chỉnh mỗi hàng ghế */
 .seat-map .row {
   display: flex;
