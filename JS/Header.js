@@ -1,11 +1,28 @@
 // Theme Toggle Logic
 const themeToggle = document.getElementById("themeToggle");
+
+// Kiểm tra và áp dụng theme đã lưu trong localStorage khi tải trang
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("bg-dark", "text-white");
+  themeToggle.textContent = "🌙";
+} else {
+  document.body.classList.remove("bg-dark", "text-white");
+  themeToggle.textContent = "🌞";
+}
+
+// Lắng nghe sự kiện click để thay đổi theme
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("bg-dark");
   document.body.classList.toggle("text-white");
-  themeToggle.textContent = document.body.classList.contains("bg-dark")
-    ? "🌙"
-    : "🌞";
+
+  // Cập nhật biểu tượng và lưu theme mới vào localStorage
+  if (document.body.classList.contains("bg-dark")) {
+    themeToggle.textContent = "🌙";
+    localStorage.setItem("theme", "dark");
+  } else {
+    themeToggle.textContent = "🌞";
+    localStorage.setItem("theme", "light");
+  }
 });
 
 // Language Switch Logic
