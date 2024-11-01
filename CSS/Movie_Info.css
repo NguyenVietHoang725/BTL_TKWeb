@@ -1,0 +1,85 @@
+/* Reset một số thuộc tính mặc định */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Section chính */
+.section {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f8f9fa; /* Màu nền nhẹ */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+}
+
+/* Tiêu đề các section */
+.section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #343a40; /* Màu tiêu đề */
+}
+
+/* Nội dung section */
+.section p {
+    font-size: 16px;
+    line-height: 1.5; /* Khoảng cách giữa các dòng */
+    color: #6c757d; /* Màu văn bản */
+}
+
+/* Nút bấm */
+.btn-custom {
+    background-color: #007bff; /* Màu nền nút */
+    color: #fff; /* Màu chữ nút */
+}
+
+.btn-custom:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+}
+
+/* Ảnh phim */
+.movie-poster {
+    width: 100%; /* Chiều rộng 100% */
+    max-width: 400px; /* Giới hạn chiều rộng tối đa */
+    border-radius: 5px; /* Bo góc ảnh */
+}
+
+/* Định dạng các thông tin bổ sung */
+.additional-info {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #dee2e6; /* Viền xung quanh */
+    border-radius: 5px; /* Bo góc */
+    background-color: #ffffff; /* Nền trắng */
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Khoảng cách giữa các phần tử */
+}
+
+.info-item {
+    font-size: 16px;
+}
+
+.info-item strong {
+    font-weight: bold;
+    margin-right: 5px; /* Khoảng cách giữa tiêu đề và nội dung */
+}
+
+.summary-box{
+    border: 1px solid #ccc; /* Đường viền màu xám nhạt */
+    padding: 15px; /* Khoảng cách bên trong */
+    border-radius: 8px; /* Bo góc cho khung */
+    /* background-color: #f9f9f9; Màu nền nhạt */
+    max-width: 800px; /* Độ rộng tối đa của khung */
+    margin: 20px auto; /* Căn giữa khung và tạo khoảng cách trên dưới */
+}
+
+.row{
+    position: relative;
+    top : 30px;
+}
+
+
+
