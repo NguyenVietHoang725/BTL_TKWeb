@@ -65,6 +65,11 @@ const resetTimeSlots = () => {
     slot.classList.remove("active");
     slot.classList.remove("selected");
   });
+
+  // Xóa lựa chọn ghế
+  selectedSeats.forEach((seat) => seat.classList.remove("selected"));
+  selectedSeats = []; // Đặt lại danh sách ghế đã chọn
+  updateSelectedSeatsDisplay(); // Cập nhật hiển thị ghế đã chọn và tổng tiền
 };
 
 // Khi chọn phim
@@ -110,6 +115,10 @@ timeSlots.forEach((slot) => {
       selectedTime = slot.getAttribute("data-time");
       updateHiddenSection(); // Gọi lại hàm sau khi chọn giờ
     }
+
+    selectedSeats.forEach((seat) => seat.classList.remove("selected"));
+    selectedSeats = []; // Đặt lại danh sách ghế đã chọn
+    updateSelectedSeatsDisplay(); // Cập nhật hiển thị ghế đã chọn và tổng tiền
   });
 });
 
@@ -246,60 +255,57 @@ const TICKET_PRICES = {
   },
 };
 
-// Lấy loại thời gian cụ thể (cần được xác định theo yêu cầu của bạn)
-function getTimeType() {
-  // Giả sử bạn có một cách nào đó để xác định thời gian cụ thể, ví dụ từ input hoặc chọn giờ
-  // Đây là ví dụ:
-  const currentHour = new Date().getHours();
+// Hàm xác định loại thời gian trong ngày dựa trên giờ
+function getTimeType(selectedTime) {
+  if (!selectedTime) return "beforeNoon"; // Giá trị mặc định nếu selectedTime không tồn tại
+  const hour = parseInt(selectedTime.split(":")[0]);
 
-  if (currentHour < 12) {
+  if (hour < 12) {
     return "beforeNoon";
-  } else if (currentHour < 17) {
+  } else if (hour < 17) {
     return "afternoon";
-  } else if (currentHour < 23) {
+  } else if (hour < 23) {
     return "evening";
   } else {
     return "lateNight";
   }
 }
 
+// Hàm lấy loại ngày dựa trên ID của ngày đã chọn trong HTML
 function getDayType() {
-  const currentDate = new Date();
-  const day = currentDate.getDay(); // 0: Chủ nhật, 1: Thứ 2, ..., 6: Thứ 7
-  // Giả định rằng thứ 2 đến thứ 5 là ngày trong tuần, còn thứ 6, thứ 7, chủ nhật là cuối tuần
-  return day >= 1 && day <= 5 ? "weekdays" : "weekends";
+  const selectedDayElement = document.querySelector(".day.active");
+  if (!selectedDayElement) return "weekdays"; // Giá trị mặc định nếu không có ngày nào được chọn
+  const dayId = parseInt(selectedDayElement.dataset.day);
+  return dayId >= 1 && dayId <= 5 ? "weekdays" : "weekends";
 }
 
 let selectedSeats = []; // Mảng lưu trữ ghế đã chọn
 let totalAmount = 0; // Tổng tiền
 
+// Cập nhật hiển thị các ghế đã chọn và tổng tiền
 function updateSelectedSeatsDisplay() {
   const selectedSeatsElement = document.getElementById("selected-seats");
   const totalSeatsElement = document.getElementById("total-seats");
   const totalAmountElement = document.getElementById("total-amount");
 
-  // Cập nhật số ghế đã chọn
   totalSeatsElement.textContent = selectedSeats.length;
+  selectedSeatsElement.textContent = selectedSeats
+    .map((seat) => seat.textContent.trim())
+    .join(", ");
 
-  // Hiển thị danh sách ghế đã chọn với dấu phẩy
-  const seatNumbers = selectedSeats.map((seat) => seat.textContent.trim());
-  selectedSeatsElement.textContent = seatNumbers.join(", "); // Nối các ghế với dấu phẩy
-
-  // Tính tổng tiền
-  totalAmount = calculateTotalAmount();
+  totalAmount = calculateTotalAmount(selectedTime);
   totalAmountElement.textContent = `${totalAmount}đ`;
 }
 
-// Hàm tính tổng tiền
-function calculateTotalAmount() {
+// Cập nhật giá tiền cho từng ghế đã chọn
+function calculateTotalAmount(selectedTime) {
   let amount = 0;
-  const timeType = getTimeType(); // Lấy loại thời gian
-  const dayType = getDayType(); // Xác định ngày trong tuần (thứ 2 - thứ 5 hay cuối tuần)
+  const timeType = getTimeType(selectedTime); // Xác định loại thời gian
+  const dayType = getDayType(); // Xác định loại ngày dựa trên ID của ngày
 
   selectedSeats.forEach((seat) => {
-    const seatType = seat.dataset.seatType; // Lấy loại ghế từ dữ liệu ghế
+    const seatType = seat.dataset.seatType;
 
-    // Tính giá vé dựa trên loại ghế và thời gian
     if (seatType === "vip") {
       amount += TICKET_PRICES.vip[dayType][timeType];
     } else if (seatType === "double") {
@@ -311,6 +317,7 @@ function calculateTotalAmount() {
   return amount;
 }
 
+// Cập nhật toggleSeatSelection để truyền selectedTime
 function toggleSeatSelection(seat) {
   const seatType = seat.classList.contains("vip")
     ? "vip"
@@ -318,15 +325,14 @@ function toggleSeatSelection(seat) {
     ? "double"
     : "regular";
 
-  // Kiểm tra ghế đã được chọn hay chưa
   if (seat.classList.contains("selected")) {
     seat.classList.remove("selected");
-    selectedSeats = selectedSeats.filter((s) => s !== seat); // Xoá ghế đã chọn
+    selectedSeats = selectedSeats.filter((s) => s !== seat);
   } else if (!seat.classList.contains("booked")) {
     seat.classList.add("selected");
-    seat.dataset.seatType = seatType; // Lưu loại ghế
-    selectedSeats.push(seat); // Thêm ghế vào danh sách đã chọn
+    seat.dataset.seatType = seatType;
+    selectedSeats.push(seat);
   }
 
-  updateSelectedSeatsDisplay(); // Cập nhật danh sách ghế đã chọn
+  updateSelectedSeatsDisplay(); // Không cần truyền selectedTime, vì đã cập nhật trong updateSelectedSeatsDisplay
 }

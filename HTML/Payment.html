@@ -10,7 +10,7 @@
     />
     <link rel="stylesheet" href="../CSS/Header.css" />
     <link rel="stylesheet" href="../CSS/Footer.css" />
-    <link rel="stylesheet" href="../CSS/Movies.css" />
+    <link rel="stylesheet" href="../CSS/Payment.css" />
   </head>
   <body class="bg-light">
     <!-- Header -->
@@ -114,8 +114,66 @@
       </nav>
     </header>
 
-    <main>
-      
+    <main class="container">
+      <!-- Phần Thông tin phim -->
+      <section class="info-section mt-5">
+          <h2 class="section-title">Thông tin phim</h2>
+          <p><strong>Phim:</strong> <span id="movie-title"></span></p>
+          <p><strong>Ngày giờ chiếu:</strong> <span class="highlight" id="date-time"></span></p>
+          <p><strong>Ghế:</strong> <span id="selected-seats"></span></p>
+          
+          <!-- Thông tin thanh toán bên dưới -->
+          <div class="payment-info">
+              <h2>Thông tin thanh toán</h2>
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Danh mục</th>
+                          <th>Số lượng</th>
+                          <th>Tổng tiền</th>
+                      </tr>
+                  </thead>
+                  <tbody id="payment-details">
+                      <!-- Chi tiết thanh toán sẽ được điền vào đây -->
+                  </tbody>
+              </table>
+          </div>
+      </section>
+  
+      <!-- Phần Phương thức thanh toán -->
+      <section class="payment-section mt-5">
+          <h2 class="section-title">Phương thức thanh toán</h2>
+          <div class="payment-options">
+              <label>
+                  <input type="radio" name="payment" checked>
+                  <img src="https://www.vietqr.com/static/img/vietqr.png" alt="VietQR"> VietQR
+              </label>
+              <label>
+                  <input type="radio" name="payment">
+                  <img src="https://cdn.vnpay.vn/images/logo/vnpay_logo.png" alt="VNPay"> VNPay
+              </label>
+              <label>
+                  <input type="radio" name="payment">
+                  <img src="https://viettelmoney.vn/wp-content/uploads/2021/12/icon-Viettel-Money.png" alt="Viettel Money"> Viettel Money
+              </label>
+          </div>
+  
+          <div id="qr-code" class="mt-4">
+              <h3>Quét mã QR để thanh toán:</h3>
+              <img src="qr.jpg" alt="Mã QR" />
+          </div>
+  
+          <div class="summary mt-4">
+              <h3>Chi phí</h3>
+              <p>Thanh toán: <strong id="total-amount"></strong></p>
+              <p>Phí: <strong>0đ</strong></p>
+              <p>Tổng cộng: <strong id="grand-total"></strong></p>
+          </div>
+          <div class="button-group mt-4">
+              <button class="btn btn-primary pay-button">Thanh toán</button>
+              <button class="btn btn-secondary back-button">Quay lại</button>
+          </div>
+      </section>
     </main>
 
     <footer class="mt-5 py-4">
