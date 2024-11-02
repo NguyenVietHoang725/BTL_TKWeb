@@ -35,6 +35,7 @@ const movieElements = Array.from(document.querySelectorAll(".movie-item"));
 const movieSelectSection = document.getElementById("movie-select");
 
 let selectedDay = null;
+let showDate = null;
 let selectedMovie = null;
 let selectedTime = null;
 
@@ -42,9 +43,11 @@ let selectedTime = null;
 dayElements.forEach((day) => {
   day.addEventListener("click", () => {
     const dayNum = parseInt(day.getAttribute("data-day"));
+    const dateNum = day.getAttribute("data-show-date");
     dayElements.forEach((d) => d.classList.remove("active"));
     day.classList.add("active");
     selectedDay = dayNum;
+    showDate = dateNum;
     movieSelectSection.classList.remove("hidden");
     resetMoviesAndTimeSlots();
     hiddenSection.style.display = "none"; // Ẩn phần chọn ghế khi chưa có lựa chọn
@@ -317,6 +320,10 @@ function calculateTotalAmount(selectedTime) {
   return amount;
 }
 
+// Tạo một biến để lưu trữ phương thức thanh toán đã chọn
+let selectedPaymentMethod = null;
+let ticketHistory = []; // Mảng để lưu trữ lịch sử vé
+
 // Cập nhật toggleSeatSelection để truyền selectedTime
 function toggleSeatSelection(seat) {
   const seatType = seat.classList.contains("vip")
@@ -334,5 +341,115 @@ function toggleSeatSelection(seat) {
     selectedSeats.push(seat);
   }
 
-  updateSelectedSeatsDisplay(); // Không cần truyền selectedTime, vì đã cập nhật trong updateSelectedSeatsDisplay
+  updateSelectedSeatsDisplay(); // Cập nhật hiển thị ghế đã chọn
+  updateQRCodeButtonVisibility(); // Cập nhật hiển thị nút tạo mã QR
 }
+
+// Thiết lập sự kiện click cho các nút phương thức thanh toán
+const paymentButtons = document.querySelectorAll(".payment-button");
+paymentButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    // Xóa trạng thái 'active' của tất cả nút
+    paymentButtons.forEach((btn) => btn.classList.remove("active"));
+    // Đặt trạng thái 'active' cho nút được chọn
+    button.classList.add("active");
+    selectedPaymentMethod = button.getAttribute("data-method"); // Lưu phương thức thanh toán đã chọn
+
+    // Xóa mã QR hiện tại khi thay đổi phương thức thanh toán
+    const qrCodeContainer = document.getElementById("qr-code");
+    qrCodeContainer.innerHTML = ""; // Xóa mã QR hiện tại
+
+    updateQRCodeButtonVisibility(); // Cập nhật hiển thị nút tạo mã QR
+  });
+});
+
+// Hàm cập nhật hiển thị nút tạo mã QR
+function updateQRCodeButtonVisibility() {
+  const createQRCodeButton = document.getElementById("create-qr-button");
+  if (selectedSeats.length > 0 && selectedPaymentMethod) {
+    createQRCodeButton.style.display = "block"; // Hiển thị nút tạo mã QR
+  } else {
+    createQRCodeButton.style.display = "none"; // Ẩn nút tạo mã QR
+  }
+}
+
+let createdQR = false; // Biến kiểm tra mã QR đã được tạo hay chưa
+
+// Lắng nghe sự kiện click vào nút tạo mã QR
+document.getElementById("create-qr-button").addEventListener("click", () => {
+  // Kiểm tra xem đã chọn ghế và phương thức thanh toán chưa
+  if (selectedSeats.length === 0 || selectedPaymentMethod === null) {
+    alert("Vui lòng chọn ghế và phương thức thanh toán trước khi tạo mã QR.");
+    return;
+  }
+
+  // Tạo một chuỗi ngẫu nhiên
+  const randomString = Math.random().toString(36).substring(2, 15); // Chuỗi ngẫu nhiên
+
+  const qrCodeContainer = document.getElementById("qr-code");
+
+  // Xóa mã QR cũ nếu có
+  qrCodeContainer.innerHTML = "";
+
+  // Tạo mã QR mới
+  const qrCode = new QRCode(qrCodeContainer, {
+    text: randomString, // Sử dụng chuỗi ngẫu nhiên làm nội dung mã QR
+    width: 180,
+    height: 180,
+  });
+
+  createdQR = true; // Cập nhật biến để xác nhận rằng mã QR đã được tạo
+
+  // Ẩn nút tạo mã QR sau khi tạo mã
+  document.getElementById("create-qr-button").style.display = "none";
+});
+
+// Lắng nghe sự kiện click vào nút thanh toán
+document.getElementById("pay-button").addEventListener("click", () => {
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+  if (!isLoggedIn) {
+    // Chuyển hướng đến trang đăng nhập nếu chưa đăng nhập
+    alert("Vui lòng đăng nhập để tiếp tục thanh toán.");
+    window.location.href = "Register_Login.html";
+    return;
+  }
+
+  const currentUserEmail = JSON.parse(localStorage.getItem("currentUser"));
+  const today = new Date();
+  const purchaseDate = today.toISOString().split("T")[0]; // Trả về định dạng YYYY-MM-DD
+
+  const ticketDetails = {
+    movieName: selectedMovie,
+    purchaseDate: purchaseDate,
+    showDate: showDate,
+    seatNumbers: selectedSeats.map((seat) => seat.textContent).join(", "),
+    totalAmount: calculateTotalAmount(),
+  };
+
+  // Lấy dữ liệu lịch sử hiện có từ LocalStorage
+  let ticketHistory =
+    JSON.parse(localStorage.getItem(`${currentUserEmail}_ticketHistory`)) || [];
+
+  // Thêm thông tin vé mới vào lịch sử
+  ticketHistory.push(ticketDetails);
+
+  // Lưu lại vào LocalStorage
+  localStorage.setItem(
+    `${currentUserEmail}_ticketHistory`,
+    JSON.stringify(ticketHistory)
+  );
+
+  // Hiển thị thông báo thanh toán thành công
+  alert("Thanh toán thành công!");
+});
+
+// Lắng nghe sự kiện thay đổi ghế
+const seatMap = document.getElementById("seat-map");
+seatMap.addEventListener("click", () => {
+  // Khi có thay đổi ghế, xóa mã QR hiện tại và hiển thị lại nút tạo mã QR
+  const qrCodeContainer = document.getElementById("qr-code");
+  qrCodeContainer.innerHTML = ""; // Xóa mã QR hiện tại
+  document.getElementById("create-qr-button").style.display = "block"; // Hiển thị lại nút tạo mã QR
+  updateSelectedSeatsDisplay(); // Cập nhật hiển thị ghế đã chọn
+});

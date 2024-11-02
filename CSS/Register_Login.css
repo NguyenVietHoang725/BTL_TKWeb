@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #512da8;
-  --secondary-color: #5c6bc0;
+  --primary-color: #fac213;
+  --secondary-color: #ffd700;
   --error-color: red;
   --success-color: green;
 }
@@ -29,7 +29,7 @@
 }
 
 .auth-container a {
-  color: #333;
+  color: #393e46;
   font-size: 13px;
   text-decoration: none;
   margin: 15px 0 10px;
@@ -37,7 +37,7 @@
 
 .auth-container button {
   background-color: var(--primary-color);
-  color: #fff;
+  color: #000;
   font-size: 12px;
   padding: 10px 45px;
   border: 1px solid transparent;
@@ -51,7 +51,7 @@
 
 .auth-container button.hidden {
   background-color: transparent;
-  border-color: #fff;
+  border-color: #000;
 }
 
 .auth-container form {
@@ -217,7 +217,7 @@
     var(--secondary-color),
     var(--primary-color)
   );
-  color: #fff;
+  color: #000;
   position: relative;
   left: -100%;
   height: 100%;

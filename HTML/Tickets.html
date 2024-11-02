@@ -125,72 +125,72 @@
             </svg>
           </button>
           <div class="day-selector row row-cols-3 row-cols-md-7 text-center">
-            <div class="col day" data-day="1">
+            <div class="col day" data-day="1" data-show-date="2024-10-28">
               <span>Th. 10</span>
               <h3>28</h3>
               <p>Thứ hai</p>
             </div>
-            <div class="col day" data-day="2">
+            <div class="col day" data-day="2" data-show-date="2024-10-29">
                 <span>Th. 10</span>
                 <h3>29</h3>
                 <p>Thứ ba</p>
             </div>
-            <div class="col day" data-day="3">
+            <div class="col day" data-day="3" data-show-date="2024-10-30">
                 <span>Th. 10</span>
                 <h3>30</h3>
                 <p>Thứ tư</p>
             </div>
-            <div class="col day" data-day="4">
+            <div class="col day" data-day="4" data-show-date="2024-10-31">
                 <span>Th. 10</span>
                 <h3>31</h3>
                 <p>Thứ năm</p>
             </div>
-            <div class="col day" data-day="5">
+            <div class="col day" data-day="5" data-show-date="2024-11-01">
                 <span>Th. 11</span>
                 <h3>01</h3>
                 <p>Thứ sáu</p>
             </div>
-            <div class="col day" data-day="6">
+            <div class="col day" data-day="6" data-show-date="2024-11-02">
                 <span>Th. 11</span>
                 <h3>02</h3>
                 <p>Thứ bảy</p>
             </div>
-            <div class="col day" data-day="7">
+            <div class="col day" data-day="7" data-show-date="2024-11-03">
                 <span>Th. 11</span>
                 <h3>03</h3>
                 <p>Chủ nhật</p>
             </div>
-            <div class="col day" data-day="1">
+            <div class="col day" data-day="1" data-show-date="2024-11-04">
               <span>Th. 11</span>
               <h3>04</h3>
               <p>Thứ hai</p>
             </div>
-            <div class="col day" data-day="2">
+            <div class="col day" data-day="2" data-show-date="2024-11-05">
                 <span>Th. 11</span>
                 <h3>05</h3>
                 <p>Thứ ba</p>
             </div>
-            <div class="col day" data-day="3">
+            <div class="col day" data-day="3" data-show-date="2024-11-06">
                 <span>Th. 11</span>
                 <h3>06</h3>
                 <p>Thứ tư</p>
             </div>
-            <div class="col day active" data-day="4">
+            <div class="col day" data-day="4" data-show-date="2024-11-07">
                 <span>Th. 11</span>
                 <h3>07</h3>
                 <p>Thứ năm</p>
             </div>
-            <div class="col day" data-day="5">
+            <div class="col day" data-day="5" data-show-date="2024-11-08">
                 <span>Th. 11</span>
                 <h3>08</h3>
                 <p>Thứ sáu</p>
             </div>
-            <div class="col day" data-day="6">
+            <div class="col day" data-day="6" data-show-date="2024-11-09">
                 <span>Th. 11</span>
                 <h3>09</h3>
                 <p>Thứ bảy</p>
             </div>
-            <div class="col day" data-day="7">
+            <div class="col day" data-day="7" data-show-date="2024-11-10">
                 <span>Th. 11</span>
                 <h3>10</h3>
                 <p>Chủ nhật</p>
@@ -320,21 +320,49 @@
             </div>
         </div>
         <div class="summary-container text-center mb-4">
-            <div class="summary">
-                <div class="selected-seats-info">
-                    <p class="label">Ghế đã chọn:</p>
-                    <p class="value"><span id="total-seats">0</span> (<span id="selected-seats"></span>)</p>
+          <div class="summary d-flex justify-content-between">
+              <div class="payment-details">
+                  <div class="selected-seats-info">
+                      <p class="label">Ghế đã chọn:</p>
+                      <p class="value"><span id="total-seats">0</span> (<span id="selected-seats"></span>)</p>
+                  </div>
+                  <div class="total-amount-info">
+                      <p class="label">Tổng tiền:</p>
+                      <p class="value"><span id="total-amount">0đ</span></p>
+                  </div>
+                  
+                  <!-- Payment Method Section -->
+                  <div class="payment-method-section mt-4">
+                      <p class="payment-method-label">Phương thức thanh toán</p>
+                      <div class="payment-options d-flex justify-content-center">
+                          <button type="button" class="payment-button" data-method="vietqr">
+                              <img src="../Images/Logo/Logo_VietQR.png" alt="VietQR"> VietQR
+                          </button>
+                          <button type="button" class="payment-button" data-method="vnpay">
+                              <img src="../Images/Logo/Logo_VNPay.png" alt="VNPay"> VNPay
+                          </button>
+                          <button type="button" class="payment-button" data-method="viettelmoney">
+                              <img src="../Images/Logo/Logo_ViettelMoney.png" alt="Viettel Money"> Viettel Money
+                          </button>
+                      </div>
+                  </div>
+      
+                  <!-- Action Buttons -->
+                  <div class="actions d-flex justify-content-center mt-3">
+                      <button id="create-qr-button" class="btn btn-primary mx-2">Tạo mã QR</button>
+                  </div>
+              </div>
+              
+              <!-- QR Code Section -->
+              <div class="qr-code-section flex-column align-items-center p-4">
+                <h3 class="qr-title mb-3">Mã QR thanh toán</h3>
+                <div id="qr-code" class="qr-code-display mb-3">
+                    <!-- QR Code will be generated and displayed here -->
                 </div>
-                <div class="total-amount-info">
-                    <p class="label">Tổng tiền:</p>
-                    <p class="value"><span id="total-amount">0đ</span></p>
-                </div>
-            </div>
-            <div class="actions d-flex justify-content-center mt-3">
-                <button id="pay-button" class="btn btn-primary mx-2">Thanh toán</button>
-                <button id="back-button" class="btn btn-secondary mx-2">Quay lại</button>
-            </div>
-        </div>
+                <button id="pay-button" class="btn btn-primary">Thanh toán</button>
+              </div>
+          </div>
+      </div>
     </section>
   </main>
 
@@ -403,6 +431,8 @@
       
   </div>
     <script src="../Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/qrcode.js/jquery.min.js"></script>
+    <script src="../lib/qrcode.js/qrcode.min.js"></script>
     <script src="../JS/Header.js"></script>
     <script src="../JS/Tickets.js"></script>
   </body>

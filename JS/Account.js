@@ -133,3 +133,39 @@ function logout() {
   // Chuyển hướng về trang đăng nhập
   window.location.href = "Register_Login.html";
 }
+
+function updateTicketHistory() {
+  const historyTableBody = document.querySelector(".ticket-history tbody");
+  const currentUserEmail = JSON.parse(localStorage.getItem("currentUser"));
+
+  // Lấy dữ liệu lịch sử từ LocalStorage
+  const ticketHistory =
+    JSON.parse(localStorage.getItem(`${currentUserEmail}_ticketHistory`)) || [];
+
+  // Xóa nội dung hiện có trong bảng trước khi thêm mới
+  historyTableBody.innerHTML = "";
+
+  // Kiểm tra nếu có lịch sử đặt vé
+  if (ticketHistory.length > 0) {
+    ticketHistory.forEach((ticket, index) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <th scope="row">${index + 1}</th>
+        <td>${ticket.movieName}</td>
+        <td>${ticket.purchaseDate}</td>
+        <td>${ticket.showDate}</td>
+        <td>${ticket.seatNumbers}</td>
+        <td>${ticket.totalAmount} VND</td>
+      `;
+      historyTableBody.appendChild(row);
+    });
+  } else {
+    // Nếu không có dữ liệu, thêm hàng thông báo
+    const emptyRow = document.createElement("tr");
+    emptyRow.innerHTML = `<td colspan="6" class="text-center">Chưa có lịch sử đặt vé.</td>`;
+    historyTableBody.appendChild(emptyRow);
+  }
+}
+
+// Gọi hàm để cập nhật lịch sử khi trang tải
+document.addEventListener("DOMContentLoaded", updateTicketHistory);

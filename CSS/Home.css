@@ -1,3 +1,22 @@
+/* Dark Theme */
+body.bg-dark section h2 {
+  color: #ffd700;
+}
+
+body.bg-dark .banner-section img {
+  border-color: #ffd700;
+}
+
+body.bg-dark .btn-view-all {
+  color: #ffd700;
+  border-color: #ffd700;
+}
+
+body.bg-dark .btn-view-all:hover {
+  background-color: #ffd700;
+  color: #000;
+}
+
 /* Căn chỉnh cho tiêu đề section */
 .section-title {
   text-align: center;
@@ -193,6 +212,30 @@
   margin: 5px; /* Khoảng cách giữa các nút */
 }
 
+/* Đặt container để căn giữa nút */
+.centered-container {
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  margin-top: 1rem; /* Khoảng cách phía trên */
+}
+
+/* CSS cho nút "Xem tất cả" */
+.btn-view-all {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn-view-all:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
 /* Banner Section */
 .banner-section {
   display: block; /* Đặt các banner theo chiều dọc */
@@ -205,4 +248,8 @@
   height: auto; /* Giữ tỷ lệ ảnh */
   margin: 20px 0; /* Thêm khoảng cách giữa các ảnh */
   border: 3px solid #000;
+}
+
+.banner-section > div:last-child img {
+  margin-bottom: 0;
 }
