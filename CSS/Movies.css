@@ -4,6 +4,78 @@ main {
   align-items: center;
 }
 
+
+
+.section-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #393e46; 
+  text-transform: uppercase;
+}
+
+.movie-banner-section {
+  padding: 0; /* Xóa padding bên trong của section */
+  text-align: center;
+  background-color: #f8f9fa;
+  overflow: hidden;
+}
+
+.slider-container {
+  margin: 30px;
+  background-color: #6b6868; /* Màu xám cho khung */
+  padding: 0; /* Xóa padding bên trong của khung */
+  border-radius: 0; /* Bỏ bo góc nếu không muốn */
+  box-shadow: none; /* Bỏ đổ bóng nếu không muốn */
+  width: 100vw; /* Đặt chiều rộng là 100% viewport */
+  position: relative; /* Đảm bảo nó có thể nằm bên cạnh các phần tử khác */
+  left: 50%; /* Để có thể căn giữa */
+  transform: translateX(-50%); /* Để căn giữa khung */
+}
+
+.movie-banner-slider {
+  width: 80%;        /* Điều chỉnh độ rộng tổng thể của slider */
+  max-width: 1200px;  /* Đặt giới hạn độ rộng cho slider */
+  margin: 0 auto; /* Giữa slider trong container */
+}
+
+.swiper-slide {
+  width: 780px; /* Đặt chiều rộng cho slide */
+  height: 450px; /* Đặt chiều cao cho slide */
+  transition: opacity 0.5s ease; /* Thêm hiệu ứng mượt cho việc ẩn hiện slide */
+  opacity: 0; /* Mặc định ẩn tất cả slide */
+  display: flex; /* Sử dụng flexbox để căn giữa hình ảnh */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.swiper-slide-active {
+  opacity: 1; /* Hiện slide đang hoạt động */
+}
+
+.swiper-slide img {
+  width: auto; /* Đặt chiều rộng là tự động */
+  height: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều cao của slide */
+  object-fit: contain; /* Giữ tỷ lệ của hình ảnh mà không bị cắt */
+  border-radius: 8px; /* Bo góc cho hình ảnh */
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;       /* Đặt màu cho nút điều hướng */
+  top: 50%;          /* Căn giữa theo chiều dọc */
+  transform: translateY(-50%);
+}
+
+.swiper-pagination {
+  bottom: 10px; /* Đưa pagination xuống dưới */
+}
+
+
+
+
 .tabs {
   display: flex;
   justify-content: center;
@@ -34,7 +106,7 @@ main {
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
-  margin: 40px 0;
+  margin: 20px 0;
   padding: 20px;
 }
 
@@ -131,4 +203,17 @@ main {
 
 .show-more:hover {
   background-color: #0056b3; /* Đổi màu khi hover */
+}
+
+.banner-section {
+  display: block; /* Đặt các banner theo chiều dọc */
+  text-align: center; /* Căn giữa các ảnh nếu cần */
+}
+
+.banner-section img {
+  width: 100%; /* Đảm bảo các banner chiếm toàn bộ chiều rộng của container */
+  max-width: 1920px; /* Giới hạn chiều rộng tối đa cho banner, bạn có thể thay đổi giá trị này */
+  height: auto; /* Giữ tỷ lệ ảnh */
+  margin: 20px 0; /* Thêm khoảng cách giữa các ảnh */
+  border: 3px solid #000;
 }

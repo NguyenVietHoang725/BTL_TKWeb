@@ -8,6 +8,10 @@
       href="../Bootstrap/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      href="../lib/Swiper.js/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../CSS/Header.css" />
     <link rel="stylesheet" href="../CSS/Footer.css" />
     <link rel="stylesheet" href="../CSS/Movies.css" />
@@ -106,38 +110,82 @@
                 </button>
                 <span class="theme-toggle" id="themeToggle">🌞</span>
               </div>
-          </div>         
-              
+              </div>          
             </div>
           </div>
         </div>
       </nav>
     </header>
 
-    <main>
-      <section>
-          <div class="tabs">
-              <div class="tab active" onclick="showPosters('now-showing')">Phim Đang Chiếu</div>
-              <div class="tab" onclick="showPosters('coming-soon')">Phim Sắp Chiếu</div>
-          </div>
-      </section>
-  
-      <section id="now-showing" class="poster-container container">
-          <div class="poster">
-              <img src="../Images/Posters/DespicableMe4.png" alt="Poster 1">
-              <div class="poster-buttons">
-                  <button>Đặt vé</button>
-                  <button>Chi tiết</button>
-              </div>
-              <div class="poster-info">
-                  <div class="movie-title">Despicable Me 4</div>
-                  <div class="movie-details">95 phút | 01/11/2024</div>
-              </div>
+    <main> 
+      <section class="movie-banner-section">
+        <h2 class="section-title text-center">Phim Hot Trong Tuần</h2>
+
+        <!-- Container cho slider -->
+        <div class="slider-container">
+            <!-- Swiper Slider -->
+            <div class="swiper-container movie-banner-slider">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <img src="../Images/hot_movies_img/desme4.png" alt="Banner 1" class="img-fluid">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <img src="../Images/hot_movies_img/dpwv.png" alt="Banner 2" class="img-fluid">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <img src="../Images/hot_movies_img/johnwick4.png" alt="Banner 3" class="img-fluid">
+                    </div>
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                      <img src="../Images/hot_movies_img/desme4.png" alt="Banner 1" class="img-fluid">
+                  </div>
+                  <!-- Slide 2 -->
+                  <div class="swiper-slide">
+                      <img src="../Images/hot_movies_img/dpwv.png" alt="Banner 2" class="img-fluid">
+                  </div>
+                  <!-- Slide 3 -->
+                  <div class="swiper-slide">
+                      <img src="../Images/hot_movies_img/johnwick4.png" alt="Banner 3" class="img-fluid">
+                  </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- Navigation Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Now-showing and Coming-soon button -->
+    <section>
+       <div class="tabs">
+            <div class="tab active" onclick="showPosters('now-showing')">Phim Đang Chiếu</div>
+            <div class="tab" onclick="showPosters('coming-soon')">Phim Sắp Chiếu</div>
+         </div>
+    </section>
+    <!-- Now-showing -->
+    <section id="now-showing" class="poster-container container">
+        <div class="poster">
+             <img src="../Images/Posters/DespicableMe4.png" alt="Poster 1">
+             <div class="poster-buttons">
+                 <button>Đặt vé</button>
+                 <button>Chi tiết</button>
+             </div>
+            <div class="poster-info">
+                <div class="movie-title">Despicable Me 4</div>
+                 <div class="movie-details">95 phút | 01/11/2024</div>
+            </div>
           </div>
 
-          <div class="poster">
-            <img src="../Images/Posters/DeadpoolAndWolverine.png" alt="Poster 2">
-            <div class="poster-buttons">
+       <div class="poster">
+          <img src="../Images/Posters/DeadpoolAndWolverine.png" alt="Poster 2">
+           <div class="poster-buttons">
                 <button>Đặt vé</button>
                 <button>Chi tiết</button>
             </div>
@@ -246,7 +294,7 @@
             <button class="show-more">Xem thêm</button>
           </div>
       </section>
-  
+      <!-- Coming-soon -->
       <section id="coming-soon" class="poster-container container" style="display: none;">
           <div class="poster">
               <img src="../Images/Posters/FreeGuy.png" alt="Poster 5">
@@ -371,6 +419,16 @@
             <button class="show-more">Xem thêm</button>
           </div>
       </section>
+      <!-- Banner -->
+      <section class="container banner-section mt-5">
+        <div>
+          <img src="../Images/Promotions/hhbanner.png" alt="Halloween Holiday" />
+        </div>
+        <div>
+          <img src="../Images/Promotions/cmbanner.png" alt="Christmas Holiday" />
+        </div>
+      </section>
+
   </main>
 
     <footer class="mt-5 py-4">
@@ -440,6 +498,6 @@
   <script src="../Bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../JS/Header.js"></script>
     <script src="../JS/Movies.js"></script>
-    
+    <script src="../lib/Swiper.js/swiper-bundle.min.js"></script>
   </body>
 </html>
