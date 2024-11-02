@@ -3,19 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trang chủ - Mahola Cinema</title>
+    <title>Phim - Mahola Cinema</title>
     <link
-      href="../Bootstrap/css/bootstrap.min.css"
+      href="../../Bootstrap/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link
-      href="../lib/Swiper.js/swiper-bundle.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../CSS/Header.css" />
-    <link rel="stylesheet" href="../CSS/Footer.css" />
-    <link rel="stylesheet" href="../CSS/Home.css" />
-    <link rel="stylesheet" href="../CSS/Movie_Info.css">
+    <link rel="stylesheet" href="../../CSS/Header.css" />
+    <link rel="stylesheet" href="../../CSS/Footer.css" />
+    <link rel="stylesheet" href="../../CSS/Movie_Info.css" />
+
   </head>
   <body class="bg-light">
     <!-- Header -->
@@ -25,7 +21,7 @@
           <!-- Brand Logo -->
           <a class="navbar-brand" href="#">
             <img
-              src="../Images/Logo/Logo.png"
+              src="../../Images/Logo/Logo.png"
               alt="Logo"
               width="300"
               height="200"
@@ -41,17 +37,17 @@
             aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            >
+        >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
-          </button>
+        </button>
 
           <!-- Navbar Links & Buttons -->
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Home.html">
+                <a class="nav-link" href="../Home.html">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                   </svg>
@@ -59,7 +55,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Movies.html">
+                <a class="nav-link" aria-current="page" href="../Movies.html">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 0 1-1.125-1.125M3.375 19.5h1.5C5.496 19.5 6 18.996 6 18.375m-3.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-1.5A1.125 1.125 0 0 1 18 18.375M20.625 4.5H3.375m17.25 0c.621 0 1.125.504 1.125 1.125M20.625 4.5h-1.5C18.504 4.5 18 5.004 18 5.625m3.75 0v1.5c0 .621-.504 1.125-1.125 1.125M3.375 4.5c-.621 0-1.125.504-1.125 1.125M3.375 4.5h1.5C5.496 4.5 6 5.004 6 5.625m-3.75 0v1.5c0 .621.504 1.125 1.125 1.125m0 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m2.625-2.625C5.496 8.25 6 7.746 6 7.125v-1.5M4.875 8.25C5.496 8.25 6 8.754 6 9.375v1.5m0-5.25v5.25m0-5.25C6 5.004 6.504 4.5 7.125 4.5h9.75c.621 0 1.125.504 1.125 1.125m1.125 2.625h1.5m-1.5 0A1.125 1.125 0 0 1 18 7.125v-1.5m1.125 2.625c-.621 0-1.125.504-1.125 1.125v1.5m2.625-2.625c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125M18 5.625v5.25M7.125 12h9.75m-9.75 0A1.125 1.125 0 0 1 6 10.875M7.125 12C6.504 12 6 12.504 6 13.125m0-2.25C6 11.496 5.496 12 4.875 12M18 10.875c0 .621-.504 1.125-1.125 1.125M18 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m-12 5.25v-5.25m0 5.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125m-12 0v-1.5c0-.621-.504-1.125-1.125-1.125M18 18.375v-5.25m0 5.25v-1.5c0-.621.504-1.125 1.125-1.125M18 13.125v1.5c0 .621.504 1.125 1.125 1.125M18 13.125c0-.621.504-1.125 1.125-1.125M6 13.125v1.5c0 .621-.504 1.125-1.125 1.125M6 13.125C6 12.504 5.496 12 4.875 12m-1.5 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M19.125 12h1.5m0 0c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h1.5m14.25 0h1.5" />
                   </svg>
@@ -67,7 +63,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Tickets.html">
+                <a class="nav-link" href="../Tickets.html">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" />
                   </svg>
@@ -75,7 +71,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Promotions.html">
+                <a class="nav-link" href="../Promotions.html">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
                   </svg>
@@ -83,7 +79,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Prices.html">
+                <a class="nav-link" href="../Prices.html">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
                   </svg>
@@ -92,83 +88,84 @@
               </li>
             </ul>
 
-              <!-- Language Switch & Theme Toggle -->
-              <div class="d-flex align-items-start d-lg-flex">
-                <!-- Div cho nút Đăng Nhập và Đăng Ký -->
-                <div class="me-2">
-                  <button id="headerLogin" class="btn btn-outline-primary btn-hover" onclick="location.href='Register_Login.html'">
-                    Đăng Nhập
-                  </button>
-                </div>
+            <!-- Language Switch & Theme Toggle -->
+            <div class="d-flex align-items-start d-lg-flex">
+              <div class="me-2">
+                <button id="logoutButton" class="btn btn-outline-primary btn-hover" onclick="logout()">
+                    Đăng Xuất
+                </button>    
+            </div>
 
-                <!-- Div cho nút chuyển đổi ngôn ngữ và theme -->
-                <div class="d-flex align-items-center">
-                  <button
-                    class="btn btn-outline-secondary me-2"
-                    id="languageSwitch"
-                    >
-                    EN
-                  </button>
-                  <span class="theme-toggle" id="themeToggle">🌞</span>
-                </div>
-              </div>          
+              <!-- Div cho nút chuyển đổi ngôn ngữ và theme -->
+              <div class="d-flex align-items-center">
+                <button
+                  class="btn btn-outline-secondary me-2"
+                  id="languageSwitch"
+                >
+                  EN
+                </button>
+                <span class="theme-toggle" id="themeToggle">🌞</span>
+              </div>
+          </div>         
+              
             </div>
           </div>
         </div>
       </nav>
     </header>
 
-    <main>
+    <main class="container my-5">
         <div class="row">
             <!-- Movie Poster and Booking Button -->
-            <section class="col-md-4 text-center" id="movie-poster">
-              <img src="../Images/Movies/movie-poster.jpg" alt="Poster phim" class="img-fluid mb-3" />
-              <button class="btn btn-dark btn-lg w-75">Đặt vé</button>
+            <section class="col-md-4 text-center movie-poster-section" id="movie-poster">
+                <img src="../../Images/Posters/DespicableMe4.png" alt="Poster phim" class="img-fluid mb-3 custom-img-size movie-poster" />
+                <button class="btn btn-dark btn-lg w-75 btn-custom">Đặt vé</button>
             </section>
-      
-            <!-- Movie Details -->
-            <section class="col-md-8" id="movie-details">
-              <h1 class="display-5">NGÀY XƯA CÓ MỘT CHUYỆN TÌNH</h1>
-              <div class="d-flex align-items-center mb-2">
-                <p class="mb-0 mr-2">Xem xếp hạng</p>
-                <span class="text-warning">★★★★☆</span>
-                <h3 class="ml-2 mb-0 font-weight-bold">7.8</h3>
-              </div>
-              <div class="movie-info">
-                <div class="info-item">Xếp hạng: [Trong nước] (T16)</div>
-                <div class="info-item">Trên 16 tuổi | Ngày phát hành: 25/10/2024</div>
-                <div class="info-item">Thông tin cơ bản: melodramatic/love/Romance Vietnam (135 Phút)</div>
-                <div class="info-item">Loại: 2D | Normal sound | Phụ đề tiếng Anh</div>
-              </div>
-            </section>
-          </div>
-      
-          <!-- Movie Summary -->
-          <section class="summary-box" id="movie-summary">
-            <h2 class="h4">Tóm tắt</h2>
-            <p>
-              Xoay quanh câu chuyện tình bạn, tình yêu giữa hai chàng trai và một cô gái từ thuở ấu thơ cho đến khi trưởng thành,
-              phải đối mặt với những thử thách của số phận. Ba nhân vật Vinh, Miên, Phúc đã cùng yêu, cùng bỡ ngỡ bước vào đời, 
-              và vấp và vượt qua. Bộ phim được chuyển thể từ truyện dài cùng tên của nhà văn Nguyễn Nhật Ánh, xuất bản lần đầu tiên vào năm 2016
-              và tái bản đến 20 lần với các phiên bản bìa sách khác nhau cho đến nay. Tác phẩm này nhận nhiều đánh giá tích cực cùng sự yêu mến
-              từ độc giả trên khắp cả nước nhờ câu chuyện nhẹ nhàng, lãng mạn mà thấm đẫm suy ngẫm về tình yêu và cuộc sống.
-            </p>
-          </section>
-    </main>
     
+           <!-- Movie Details and Summary -->
+<section class="col-md-8 movie-details-section">
+    <div id="movie-details" class="mb-4">
+        <h1 class="display-5 movie-title">Despicable Me 4</h1>
+        <div class="d-flex align-items-center mb-2">
+            <p class="mb-0 mr-2 rating-label">Xem xếp hạng</p>
+            <span class="text-warning">★★★★☆</span>
+            <h3 class="ml-2 mb-0 font-weight-bold movie-rating">8.2</h3>
+        </div>
+        <div class="movie-info">
+            <div class="info-item">Dành cho trẻ em | Ngày phát hành: 05/07/2024</div>
+            <div class="info-item">Thông tin cơ bản: Phim hoạt hình/Phiêu lưu/Hài hước (95 Phút)</div>
+            <div class="info-item">Loại: 3D | Normal sound | Phụ đề tiếng Việt</div>
+        </div>
+    </div>
+
+    <!-- Movie Summary -->
+    <div class="summary-box">
+        <h2 class="h4 summary-title">Tóm tắt</h2>
+        <p class="summary-text">
+            Trong phần phim mới này, Gru và những chú Minion của anh sẽ bắt đầu một cuộc phiêu lưu hoàn toàn mới khi họ gặp một kẻ thù hùng mạnh
+            hơn bao giờ hết. Bên cạnh việc đối mặt với những tình huống hài hước và thú vị, Gru cũng phải học cách trở thành một người cha tốt hơn 
+            cho các cô con gái của mình. Với những màn hành động hấp dẫn và những câu chuyện cảm động về gia đình, "Despicable Me 4" hứa hẹn sẽ mang đến
+            cho khán giả những giây phút thư giãn và niềm vui bất tận.
+        </p>
+    </div>
+</section>
+
+        </div>
+  </main>
+
     <footer class="mt-5 py-4">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <h5>Liên Kết Nhanh</h5>
             <ul class="list-unstyled">
-              <li><a href="Home.html" class="text-white">Trang Chủ</a></li>
-              <li><a href="Movies.html" class="text-white">Phim</a></li>
-              <li><a href="Tickets.html" class="text-white">Đặt Vé</a></li>
+              <li><a href="../Home.html" class="text-white">Trang Chủ</a></li>
+              <li><a href="../Movies.html" class="text-white">Phim</a></li>
+              <li><a href="../Tickets.html" class="text-white">Đặt Vé</a></li>
               <li>
-                <a href="Promotions.html" class="text-white">Khuyến Mãi</a>
+                <a href="../Promotions.html" class="text-white">Khuyến Mãi</a>
               </li>
-              <li><a href="Prices.html" class="text-white">Giá Vé</a></li>
+              <li><a href="../Prices.html" class="text-white">Giá Vé</a></li>
             </ul>
           </div>
           <div class="col-md-6">
@@ -183,7 +180,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                     <path fill-rule="evenodd" d="M3 2.25a.75.75 0 0 0 0 1.5v16.5h-.75a.75.75 0 0 0 0 1.5H15v-18a.75.75 0 0 0 0-1.5H3ZM6.75 19.5v-2.25a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-.75.75h-3a.75.75 0 0 1-.75-.75ZM6 6.75A.75.75 0 0 1 6.75 6h.75a.75.75 0 0 1 0 1.5h-.75A.75.75 0 0 1 6 6.75ZM6.75 9a.75.75 0 0 0 0 1.5h.75a.75.75 0 0 0 0-1.5h-.75ZM6 12.75a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM10.5 6a.75.75 0 0 0 0 1.5h.75a.75.75 0 0 0 0-1.5h-.75Zm-.75 3.75A.75.75 0 0 1 10.5 9h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM10.5 12a.75.75 0 0 0 0 1.5h.75a.75.75 0 0 0 0-1.5h-.75ZM16.5 6.75v15h5.25a.75.75 0 0 0 0-1.5H21v-12a.75.75 0 0 0 0-1.5h-4.5Zm1.5 4.5a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Zm.75 2.25a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75v-.008a.75.75 0 0 0-.75-.75h-.008ZM18 17.25a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z" clip-rule="evenodd" />
                 </svg>
-                Địa chỉ: Tầng 3, TTTM Soiech, Đường ABC, Phường XYZ, Quận 1, TP.HCM, Việt Nam
+                Địa chỉ: Tầng 3, TTTM MAHOLA, Đường ABC, Phường XYZ, Quận EFG, TP. Hà Nội, Việt Nam
             </p>
             <p>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -193,13 +190,13 @@
             </p>
               <div class="social-icons">
                   <a href="https://www.facebook.com/" target="_blank">
-                      <img src="../Images/Logo/Logo_Facebook.jpg" alt="Facebook" class="size-6">
+                      <img src="../../Images/Logo/Logo_Facebook.jpg" alt="Facebook" class="size-6">
                   </a>
                   <a href="https://www.youtube.com/" target="_blank">
-                      <img src="../Images/Logo/Logo_Youtube.jpg" alt="YouTube" class="size-6">
+                      <img src="../../Images/Logo/Logo_Youtube.jpg" alt="YouTube" class="size-6">
                   </a>
                   <a href="https://twitter.com/" target="_blank">
-                      <img src="../Images/Logo/Logo_X.jpg" alt="Twitter" class="size-6">
+                      <img src="../../Images/Logo/Logo_X.jpg" alt="Twitter" class="size-6">
                   </a>
               </div>
           </div>
@@ -211,7 +208,7 @@
         </div>
       </div>
     </footer>
-    
+
 
     <div id="scrollToTop" class="scroll-to-top">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
@@ -220,10 +217,8 @@
     </svg>
       
   </div>
-    <script src="../Bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../lib/Swiper.js/swiper-bundle.min.js"></script>
-
-    <script src="../JS/Header.js"></script>
-    <script src="../JS/Home.js"></script>
+    <script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../JS/Header.js"></script>
+    <script src="../../JS/Account.js"></script>
   </body>
 </html>

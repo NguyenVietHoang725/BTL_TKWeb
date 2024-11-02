@@ -1,35 +1,45 @@
-/* Reset một số thuộc tính mặc định */
-body {
-    font-family: Arial, sans-serif;
-}
-
 /* Section chính */
-.section {
+.movie-poster-section, .movie-details-section {
     margin: 20px 0;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #f8f9fa; /* Màu nền nhẹ */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng */
 }
 
-/* Tiêu đề các section */
-.section h2 {
-    font-size: 24px;
+/* Tiêu đề phim */
+.movie-title {
+    font-size: 26px; /* Tăng kích thước cho tiêu đề */
+    font-weight: bold;
     margin-bottom: 15px;
     color: #343a40; /* Màu tiêu đề */
 }
 
+/* Xem xếp hạng */
+.rating-label {
+    margin-right: 10px; /* Tăng khoảng cách bên phải của nhãn */
+}
+/* Tiêu đề tóm tắt */
+.summary-title {
+    font-size: 24px; /* Kích thước cho tiêu đề tóm tắt */
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #343a40; /* Màu tiêu đề */
+}
+
+.movie-details-section {
+    padding: 0 60px;
+}
+
 /* Nội dung section */
-.section p {
+.movie-details-section p,
+.summary-text {
     font-size: 16px;
-    line-height: 1.5; /* Khoảng cách giữa các dòng */
-    color: #6c757d; /* Màu văn bản */
+    line-height: 1.6; /* Khoảng cách giữa các dòng */
+    color: #495057; /* Màu văn bản tối hơn */
 }
 
 /* Nút bấm */
 .btn-custom {
     background-color: #007bff; /* Màu nền nút */
     color: #fff; /* Màu chữ nút */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
 }
 
 .btn-custom:hover {
@@ -38,48 +48,41 @@ body {
 
 /* Ảnh phim */
 .movie-poster {
-    width: 100%; /* Chiều rộng 100% */
-    max-width: 400px; /* Giới hạn chiều rộng tối đa */
-    border-radius: 5px; /* Bo góc ảnh */
+    width: 80%; /* Chiều rộng 100% */
+    
 }
 
-/* Định dạng các thông tin bổ sung */
-.additional-info {
-    margin-top: 15px;
-    padding: 10px;
-    border: 1px solid #dee2e6; /* Viền xung quanh */
-    border-radius: 5px; /* Bo góc */
-    background-color: #ffffff; /* Nền trắng */
-}
-
+/* Định dạng thông tin phim */
 .movie-info {
     display: flex;
     flex-direction: column;
     gap: 10px; /* Khoảng cách giữa các phần tử */
+    margin-bottom: 20px; /* Thêm khoảng cách dưới cùng */
 }
 
+/* Thông tin từng mục */
 .info-item {
     font-size: 16px;
+    color: #6c757d; /* Màu văn bản thông tin */
 }
 
-.info-item strong {
-    font-weight: bold;
-    margin-right: 5px; /* Khoảng cách giữa tiêu đề và nội dung */
+/* Kích thước ảnh tùy chỉnh */
+.custom-img-size {
+    max-width: 100%; /* Điều chỉnh tỉ lệ mong muốn (100% chiều rộng của phần tử chứa) */
+    height: auto; /* Đảm bảo tỷ lệ ảnh không thay đổi */
+    border-radius: 10px;
 }
 
-.summary-box{
+/* Tóm tắt phim */
+.summary-box {
     border: 1px solid #ccc; /* Đường viền màu xám nhạt */
     padding: 15px; /* Khoảng cách bên trong */
     border-radius: 8px; /* Bo góc cho khung */
-    /* background-color: #f9f9f9; Màu nền nhạt */
-    max-width: 800px; /* Độ rộng tối đa của khung */
-    margin: 20px auto; /* Căn giữa khung và tạo khoảng cách trên dưới */
+    background-color: #f8f9fa; /* Nền màu sáng hơn */
 }
 
-.row{
+/* Điều chỉnh khoảng cách giữa các hàng */
+.row {
     position: relative;
-    top : 30px;
+    top: 30px; /* Điều chỉnh vị trí của hàng */
 }
-
-
-
