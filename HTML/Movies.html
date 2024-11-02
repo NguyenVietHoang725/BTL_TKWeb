@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../CSS/Footer.css" />
     <link rel="stylesheet" href="../CSS/Movies.css" />
   </head>
+
   <body class="bg-light">
     <!-- Header -->
     <header>
@@ -118,50 +119,6 @@
     </header>
 
     <main> 
-      <section class="movie-banner-section">
-        <h2 class="section-title text-center">Phim Hot Trong Tuần</h2>
-
-        <!-- Container cho slider -->
-        <div class="slider-container">
-            <!-- Swiper Slider -->
-            <div class="swiper-container movie-banner-slider">
-                <div class="swiper-wrapper">
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide">
-                        <img src="../Images/hot_movies_img/desme4.png" alt="Banner 1" class="img-fluid">
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide">
-                        <img src="../Images/hot_movies_img/dpwv.png" alt="Banner 2" class="img-fluid">
-                    </div>
-                    <!-- Slide 3 -->
-                    <div class="swiper-slide">
-                        <img src="../Images/hot_movies_img/johnwick4.png" alt="Banner 3" class="img-fluid">
-                    </div>
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide">
-                      <img src="../Images/hot_movies_img/desme4.png" alt="Banner 1" class="img-fluid">
-                  </div>
-                  <!-- Slide 2 -->
-                  <div class="swiper-slide">
-                      <img src="../Images/hot_movies_img/dpwv.png" alt="Banner 2" class="img-fluid">
-                  </div>
-                  <!-- Slide 3 -->
-                  <div class="swiper-slide">
-                      <img src="../Images/hot_movies_img/johnwick4.png" alt="Banner 3" class="img-fluid">
-                  </div>
-                </div>
-
-                <!-- Pagination -->
-                <div class="swiper-pagination"></div>
-
-                <!-- Navigation Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-    </section>
-
     <!-- Now-showing and Coming-soon button -->
     <section>
        <div class="tabs">
@@ -175,7 +132,7 @@
              <img src="../Images/Posters/DespicableMe4.png" alt="Poster 1">
              <div class="poster-buttons">
                  <button>Đặt vé</button>
-                 <button>Chi tiết</button>
+                 <a href="../HTML/Movie_Info/Despicable_Me_4_info.html" class="btn btn-primary">Chi tiết</a> 
              </div>
             <div class="poster-info">
                 <div class="movie-title">Despicable Me 4</div>
@@ -187,7 +144,7 @@
           <img src="../Images/Posters/DeadpoolAndWolverine.png" alt="Poster 2">
            <div class="poster-buttons">
                 <button>Đặt vé</button>
-                <button>Chi tiết</button>
+                <a href="../HTML/Movie_Info/Deadpool_and_Wolverine_info.html" class="btn btn-primary">Chi tiết</a> 
             </div>
             <div class="poster-info">
                 <div class="movie-title">Deadpool And Wolverine</div>
@@ -196,13 +153,13 @@
           </div>
   
           <div class="poster">
-              <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
+              <img src="../Images/Posters/thewildrobot.png" alt="Poster 2">
               <div class="poster-buttons">
                   <button>Đặt vé</button>
-                  <button>Chi tiết</button>
+                  <a href="../HTML/Movie_Info/The_Wild_Robot_info.html" class="btn btn-primary">Chi tiết</a> 
               </div>
               <div class="poster-info">
-                  <div class="movie-title">Cô Dâu Hào Môn</div>
+                  <div class="movie-title">The Wild Robot</div>
                   <div class="movie-details">90 phút | 10/11/2024</div>
               </div>
           </div>
@@ -211,7 +168,7 @@
             <img src="../Images/Posters/johnwick4.png" alt="Poster 2">
             <div class="poster-buttons">
                 <button>Đặt vé</button>
-                <button>Chi tiết</button>
+                <a href="../HTML/Movie_Info/John_Wick_4_info.html" class="btn btn-primary">Chi tiết</a> 
             </div>
             <div class="poster-info">
                 <div class="movie-title">John Wick 4</div>
@@ -220,13 +177,37 @@
           </div>
 
           <div class="poster">
-            <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
+            <img src="../Images/Posters/transformersone.png" alt="Poster 2">
+            <div class="poster-buttons">
+                <button>Đặt vé</button>
+                <a href="../HTML/Movie_Info/Transformers_One_info.html" class="btn btn-primary">Chi tiết</a> 
+            </div>
+            <div class="poster-info">
+                <div class="movie-title">Transformers One</div>
+                <div class="movie-details">90 phút | 10/11/2024</div>
+            </div>
+          </div>
+
+          <div class="poster">
+            <img src="../Images/Posters/VenomKeoCuoi.jpg" alt="Poster 2">
+            <div class="poster-buttons">
+                <button>Đặt vé</button>
+                <a href="../HTML/Movie_Info/Venom_The_Last_Dance_info.html" class="btn btn-primary">Chi tiết</a> 
+            </div>
+            <div class="poster-info">
+                <div class="movie-title">Venom Kèo Cuối</div>
+                <div class="movie-details">90 phút | 10/11/2024</div>
+            </div>
+          </div>
+
+          <div class="poster">
+            <img src="../Images/Posters/NgayXuaCoMotChuyenTinh.jpg" alt="Poster 2">
             <div class="poster-buttons">
                 <button>Đặt vé</button>
                 <button>Chi tiết</button>
             </div>
             <div class="poster-info">
-                <div class="movie-title">Cô Dâu Hào Môn</div>
+                <div class="movie-title">Ngày Xưa Có Một Chuyện Tình</div>
                 <div class="movie-details">90 phút | 10/11/2024</div>
             </div>
           </div>
@@ -244,49 +225,25 @@
           </div>
 
           <div class="poster">
-            <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
+            <img src="../Images/Posters/SpiritedAway.png" alt="Poster 2">
             <div class="poster-buttons">
                 <button>Đặt vé</button>
                 <button>Chi tiết</button>
             </div>
             <div class="poster-info">
-                <div class="movie-title">Cô Dâu Hào Môn</div>
+                <div class="movie-title">Spirited Away</div>
                 <div class="movie-details">90 phút | 10/11/2024</div>
             </div>
           </div>
 
           <div class="poster">
-            <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
+            <img src="../Images/Posters/QuyAnTangP2.jpg" alt="Poster 2">
             <div class="poster-buttons">
                 <button>Đặt vé</button>
                 <button>Chi tiết</button>
             </div>
             <div class="poster-info">
-                <div class="movie-title">Cô Dâu Hào Môn</div>
-                <div class="movie-details">90 phút | 10/11/2024</div>
-            </div>
-          </div>
-
-          <div class="poster">
-            <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
-            <div class="poster-buttons">
-                <button>Đặt vé</button>
-                <button>Chi tiết</button>
-            </div>
-            <div class="poster-info">
-                <div class="movie-title">Cô Dâu Hào Môn</div>
-                <div class="movie-details">90 phút | 10/11/2024</div>
-            </div>
-          </div>
-
-          <div class="poster">
-            <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
-            <div class="poster-buttons">
-                <button>Đặt vé</button>
-                <button>Chi tiết</button>
-            </div>
-            <div class="poster-info">
-                <div class="movie-title">Cô Dâu Hào Môn</div>
+                <div class="movie-title">Quỷ Ăn Tạng Phần 2</div>
                 <div class="movie-details">90 phút | 10/11/2024</div>
             </div>
           </div>
@@ -299,19 +256,83 @@
           <div class="poster">
               <img src="../Images/Posters/FreeGuy.png" alt="Poster 5">
               <div class="poster-buttons">
-                  <button>Đặt vé</button>
                   <button>Chi tiết</button>
               </div>
               <div class="poster-info">
-                  <div class="movie-title">John Wick 4</div>
+                  <div class="movie-title">Free Guy</div>
                   <div class="movie-details">130 phút | 15/11/2024</div>
               </div>
           </div>
           
           <div class="poster">
+            <img src="../Images/Posters/AvatarTheWayOfWater.png" alt="Poster 2">
+            <div class="poster-buttons">
+                <button>Chi tiết</button>
+            </div>
+            <div class="poster-info">
+                <div class="movie-title">Avatar The Way Of Water</div>
+                <div class="movie-details">90 phút | 10/11/2024</div>
+            </div>
+          </div>
+
+          <div class="poster">
+            <img src="../Images/Posters/Elemental.png" alt="Poster 2">
+            <div class="poster-buttons">
+                <button>Chi tiết</button>
+            </div>
+            <div class="poster-info">
+                <div class="movie-title">Elemental</div>
+                <div class="movie-details">90 phút | 10/11/2024</div>
+            </div>
+          </div>
+
+          <div class="poster">
+            <img src="../Images/Posters/Encanto.png" alt="Poster 2">
+            <div class="poster-buttons">
+                <button>Chi tiết</button>
+            </div>
+            <div class="poster-info">
+                <div class="movie-title">Encanto</div>
+                <div class="movie-details">90 phút | 10/11/2024</div>
+            </div>
+          </div>
+
+          <div class="poster">
+            <img src="../Images/Posters/InsideOut2.png" alt="Poster 2">
+            <div class="poster-buttons">
+                <button>Chi tiết</button>
+            </div>  
+            <div class="poster-info">
+                <div class="movie-title">Inside Out 2</div>
+                <div class="movie-details">90 phút | 10/11/2024</div>
+            </div>
+          </div>
+
+          <div class="poster">
+            <img src="../Images/Posters/GraveOfTheFireFlies.png" alt="Poster 2">
+            <div class="poster-buttons">
+                <button>Chi tiết</button>
+            </div>
+            <div class="poster-info">
+                <div class="movie-title">Grave Of The Fire Flies</div>
+                <div class="movie-details">90 phút | 10/11/2024</div>
+            </div>
+          </div>
+
+          <div class="poster">
+            <img src="../Images/Posters/Moana2.png" alt="Poster 2">
+            <div class="poster-buttons">
+                <button>Chi tiết</button>
+            </div>
+            <div class="poster-info">
+                <div class="movie-title">Moana 2</div>
+                <div class="movie-details">90 phút | 10/11/2024</div>
+            </div>
+          </div>
+
+          <div class="poster">
             <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
             <div class="poster-buttons">
-                <button>Đặt vé</button>
                 <button>Chi tiết</button>
             </div>
             <div class="poster-info">
@@ -323,7 +344,6 @@
           <div class="poster">
             <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
             <div class="poster-buttons">
-                <button>Đặt vé</button>
                 <button>Chi tiết</button>
             </div>
             <div class="poster-info">
@@ -332,89 +352,6 @@
             </div>
           </div>
 
-          <div class="poster">
-            <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
-            <div class="poster-buttons">
-                <button>Đặt vé</button>
-                <button>Chi tiết</button>
-            </div>
-            <div class="poster-info">
-                <div class="movie-title">Cô Dâu Hào Môn</div>
-                <div class="movie-details">90 phút | 10/11/2024</div>
-            </div>
-          </div>
-
-          <div class="poster">
-            <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
-            <div class="poster-buttons">
-                <button>Đặt vé</button>
-                <button>Chi tiết</button>
-            </div>
-            <div class="poster-info">
-                <div class="movie-title">Cô Dâu Hào Môn</div>
-                <div class="movie-details">90 phút | 10/11/2024</div>
-            </div>
-          </div>
-
-          <div class="poster">
-            <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
-            <div class="poster-buttons">
-                <button>Đặt vé</button>
-                <button>Chi tiết</button>
-            </div>
-            <div class="poster-info">
-                <div class="movie-title">Cô Dâu Hào Môn</div>
-                <div class="movie-details">90 phút | 10/11/2024</div>
-            </div>
-          </div>
-
-          <div class="poster">
-            <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
-            <div class="poster-buttons">
-                <button>Đặt vé</button>
-                <button>Chi tiết</button>
-            </div>
-            <div class="poster-info">
-                <div class="movie-title">Cô Dâu Hào Môn</div>
-                <div class="movie-details">90 phút | 10/11/2024</div>
-            </div>
-          </div>
-
-          <div class="poster">
-            <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
-            <div class="poster-buttons">
-                <button>Đặt vé</button>
-                <button>Chi tiết</button>
-            </div>
-            <div class="poster-info">
-                <div class="movie-title">Cô Dâu Hào Môn</div>
-                <div class="movie-details">90 phút | 10/11/2024</div>
-            </div>
-          </div>
-
-          <div class="poster">
-            <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
-            <div class="poster-buttons">
-                <button>Đặt vé</button>
-                <button>Chi tiết</button>
-            </div>
-            <div class="poster-info">
-                <div class="movie-title">Cô Dâu Hào Môn</div>
-                <div class="movie-details">90 phút | 10/11/2024</div>
-            </div>
-          </div>
-
-          <div class="poster">
-            <img src="../Images/Posters/CoDauHaoMon.jpg" alt="Poster 2">
-            <div class="poster-buttons">
-                <button>Đặt vé</button>
-                <button>Chi tiết</button>
-            </div>
-            <div class="poster-info">
-                <div class="movie-title">Cô Dâu Hào Môn</div>
-                <div class="movie-details">90 phút | 10/11/2024</div>
-            </div>
-          </div>
           <div class="button-container">
             <button class="show-more">Xem thêm</button>
           </div>
@@ -429,7 +366,7 @@
         </div>
       </section>
 
-  </main>
+    </main>
 
     <footer class="mt-5 py-4">
       <div class="container">
