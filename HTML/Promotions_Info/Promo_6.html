@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phim - Mahola Cinema</title>
+    <title>Khuyến mãi - Mahola Cinema</title>
     <link
       href="../../Bootstrap/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../CSS/Header.css" />
     <link rel="stylesheet" href="../../CSS/Footer.css" />
-    <link rel="stylesheet" href="../../CSS/Movie_Info.css" />
+    <link rel="stylesheet" href="../../CSS/Promotions_Info.css" />
 
   </head>
   <body class="bg-light">
@@ -91,23 +91,22 @@
             <!-- Language Switch & Theme Toggle -->
             <div class="d-flex align-items-start d-lg-flex">
               <div class="me-2">
-                <button id="headerLogin" class="btn btn-outline-primary btn-hover" onclick="location.href='../Register_Login.html'">
-                  Đăng Nhập
-                </button>
+                <button id="logoutButton" class="btn btn-outline-primary btn-hover" onclick="logout()">
+                    Đăng Xuất
+                </button>    
             </div>
 
-            <!-- Div cho nút chuyển đổi ngôn ngữ và theme -->
-            <div class="d-flex align-items-center">
-              <button
-                class="btn btn-outline-secondary me-2"
-                id="languageSwitch"
+              <!-- Div cho nút chuyển đổi ngôn ngữ và theme -->
+              <div class="d-flex align-items-center">
+                <button
+                  class="btn btn-outline-secondary me-2"
+                  id="languageSwitch"
                 >
-                EN
-              </button>
-              <span class="theme-toggle" id="themeToggle">🌞</span>
-            </div>
-          </div>          
-               
+                  EN
+                </button>
+                <span class="theme-toggle" id="themeToggle">🌞</span>
+              </div>
+          </div>         
               
             </div>
           </div>
@@ -116,41 +115,48 @@
     </header>
 
     <main class="container my-5">
-        <div class="row">
-            <!-- Movie Poster and Booking Button -->
-            <section class="col-md-4 text-center movie-poster-section" id="movie-poster">
-                <img src="../../Images/Posters/DeadpoolAndWolverine.png" alt="Poster phim" class="img-fluid mb-3 custom-img-size movie-poster" />
-                <button class="btn btn-dark btn-lg w-75 btn-custom">Đặt vé</button>
-                <a href="../Movies.html" class="btn btn-secondary btn-lg w-75 mt-3">Quay lại</a>
-            </section>
-    
-            <!-- Movie Details and Summary -->
-            <section class="col-md-8 movie-details-section">
-              <div id="movie-details" class="mb-4">
-                  <h1 class="display-5 movie-title">Deadpool and Wolverine</h1>
-                  <div class="d-flex align-items-center mb-2">
-                      <p class="mb-0 mr-2 rating-label">Xem xếp hạng</p>
-                      <span class="text-warning">★★★★☆</span>
-                      <h3 class="ml-2 mb-0 font-weight-bold movie-rating">8.5</h3>
-                  </div>
-                  <div class="movie-info">
-                      <div class="info-item">Dành cho người lớn | Ngày phát hành: 01/06/2024</div>
-                      <div class="info-item">Thông tin cơ bản: Hành động/Phiêu lưu/Hài hước (120 Phút)</div>
-                      <div class="info-item">Loại: 2D | Normal sound | Phụ đề tiếng Việt</div>
-                  </div>
-              </div>
+      <div class="row">
+          <!-- Promotion Poster and Back Button -->
+          <section class="col-md-4 text-center movie-poster-section" id="promotion-poster">
+              <img src="../../Images/Promotions/womensday.png" alt="Poster ưu đãi" class="img-fluid mb-3 custom-img-size promo-image" />
+              <a href="../Promotions.html" class="btn btn-dark btn-lg w-75 btn-promo">Quay lại</a>
+          </section>
+  
+       <!-- Promotion Details and Summary -->
+<section class="col-md-8 promo-details-section">
+    <div id="promo-details" class="mb-4">
+        <h1 class="display-5 promo-title">Ưu Đãi Đặc Biệt - Ngày Phụ Nữ Việt Nam</h1>
+        <div class="d-flex align-items-center mb-2">
+            <p class="mb-0 mr-2 promo-duration-label">Thời gian ưu đãi:</p>
+            <span class="text-warning discount-duration">10/10/2024 - 20/10/2024</span>
+        </div>
+        <div class="promo-info">
+            <div class="promo-info-item">Đối tượng áp dụng: Tất cả khách hàng</div>
+            <div class="promo-info-item">Chi tiết ưu đãi: Giảm giá 15% cho tất cả các vé xem phim nhân ngày Phụ Nữ Việt Nam</div>
+            <div class="promo-info-item">Phạm vi áp dụng: Toàn bộ các rạp chiếu phim thuộc hệ thống</div>
+        </div>
+    </div>
 
-              <!-- Movie Summary -->
-              <div class="summary-box">
-                  <h2 class="h4 summary-title">Tóm tắt</h2>
-                  <p class="summary-text">
-                      Trong bộ phim hành động hài hước này, Deadpool và Wolverine buộc phải hợp tác để đối phó với một tổ chức tội phạm mạnh mẽ đang âm thầm
-                      thôn tính thế giới. Sự kết hợp giữa tính cách hóm hỉnh của Deadpool và sự nghiêm túc của Wolverine tạo nên những tình huống dở khóc dở cười,
-                      cùng những màn chiến đấu mãn nhãn. Bộ phim không chỉ mang đến những pha hành động nghẹt thở mà còn khai thác sâu sắc về tình bạn và sự
-                      hy sinh, đưa khán giả vào một cuộc phiêu lưu không thể nào quên.
-                  </p>
-              </div>
-            </section>
+    <!-- Promotion Summary -->
+    <div class="details-box">
+        <h2 class="h4 details-title">Chi tiết ưu đãi</h2>
+        <p class="details-text">
+            Nhân ngày Phụ Nữ Việt Nam 20/10, chúng tôi dành tặng tất cả các khách hàng ưu đãi giảm giá 15% cho mọi vé xem phim từ 10/10 đến 20/10/2024. 
+            Đây là dịp tuyệt vời để tôn vinh phái đẹp và cùng họ thưởng thức những thước phim đáng nhớ. 
+            Hãy đến và cùng nhau tạo nên những khoảnh khắc tuyệt vời tại rạp!
+        </p>
+    </div>
+</section>
+
+
+
+
+
+      </div>
+  </main>
+  
+
+
         </div>
   </main>
 
@@ -221,6 +227,5 @@
     <script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../../JS/Header.js"></script>
     <script src="../../JS/Account.js"></script>
-    <script src="../../JS/Register_Login.js"></script>
   </body>
 </html>

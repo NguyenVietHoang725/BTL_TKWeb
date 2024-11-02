@@ -10,7 +10,7 @@
     />
     <link rel="stylesheet" href="../../CSS/Header.css" />
     <link rel="stylesheet" href="../../CSS/Footer.css" />
-    <link rel="stylesheet" href="../../CSS/Movie_Info.css" />
+    <link rel="stylesheet" href="../../CSS/Movies_Info.css" />
 
   </head>
   <body class="bg-light">
@@ -91,23 +91,22 @@
             <!-- Language Switch & Theme Toggle -->
             <div class="d-flex align-items-start d-lg-flex">
               <div class="me-2">
-                <button id="headerLogin" class="btn btn-outline-primary btn-hover" onclick="location.href='../Register_Login.html'">
-                  Đăng Nhập
-                </button>
+                <button id="logoutButton" class="btn btn-outline-primary btn-hover" onclick="logout()">
+                    Đăng Xuất
+                </button>    
             </div>
 
-            <!-- Div cho nút chuyển đổi ngôn ngữ và theme -->
-            <div class="d-flex align-items-center">
-              <button
-                class="btn btn-outline-secondary me-2"
-                id="languageSwitch"
+              <!-- Div cho nút chuyển đổi ngôn ngữ và theme -->
+              <div class="d-flex align-items-center">
+                <button
+                  class="btn btn-outline-secondary me-2"
+                  id="languageSwitch"
                 >
-                EN
-              </button>
-              <span class="theme-toggle" id="themeToggle">🌞</span>
-            </div>
-          </div>          
-               
+                  EN
+                </button>
+                <span class="theme-toggle" id="themeToggle">🌞</span>
+              </div>
+          </div>         
               
             </div>
           </div>
@@ -119,38 +118,39 @@
         <div class="row">
             <!-- Movie Poster and Booking Button -->
             <section class="col-md-4 text-center movie-poster-section" id="movie-poster">
-                <img src="../../Images/Posters/DeadpoolAndWolverine.png" alt="Poster phim" class="img-fluid mb-3 custom-img-size movie-poster" />
+                <img src="../../Images/Posters/thewildrobot.png" alt="Poster phim" class="img-fluid mb-3 custom-img-size movie-poster" />
                 <button class="btn btn-dark btn-lg w-75 btn-custom">Đặt vé</button>
-                <a href="../Movies.html" class="btn btn-secondary btn-lg w-75 mt-3">Quay lại</a>
             </section>
     
-            <!-- Movie Details and Summary -->
-            <section class="col-md-8 movie-details-section">
-              <div id="movie-details" class="mb-4">
-                  <h1 class="display-5 movie-title">Deadpool and Wolverine</h1>
-                  <div class="d-flex align-items-center mb-2">
-                      <p class="mb-0 mr-2 rating-label">Xem xếp hạng</p>
-                      <span class="text-warning">★★★★☆</span>
-                      <h3 class="ml-2 mb-0 font-weight-bold movie-rating">8.5</h3>
-                  </div>
-                  <div class="movie-info">
-                      <div class="info-item">Dành cho người lớn | Ngày phát hành: 01/06/2024</div>
-                      <div class="info-item">Thông tin cơ bản: Hành động/Phiêu lưu/Hài hước (120 Phút)</div>
-                      <div class="info-item">Loại: 2D | Normal sound | Phụ đề tiếng Việt</div>
-                  </div>
-              </div>
+          <!-- Movie Details and Summary -->
+<section class="col-md-8 movie-details-section">
+  <div id="movie-details" class="mb-4">
+      <h1 class="display-5 movie-title">The Wild Robot</h1>
+      <div class="d-flex align-items-center mb-2">
+          <p class="mb-0 mr-2 rating-label">Xem xếp hạng</p>
+          <span class="text-warning">★★★★☆</span>
+          <h3 class="ml-2 mb-0 font-weight-bold movie-rating">8.5</h3>
+      </div>
+      <div class="movie-info">
+          <div class="info-item">Phù hợp với mọi lứa tuổi | Ngày phát hành: 15/08/2024</div>
+          <div class="info-item">Thông tin cơ bản: Hoạt hình/Phiêu lưu/Gia đình (100 Phút)</div>
+          <div class="info-item">Loại: 3D | Dolby Atmos | Phụ đề tiếng Việt</div>
+      </div>
+  </div>
 
-              <!-- Movie Summary -->
-              <div class="summary-box">
-                  <h2 class="h4 summary-title">Tóm tắt</h2>
-                  <p class="summary-text">
-                      Trong bộ phim hành động hài hước này, Deadpool và Wolverine buộc phải hợp tác để đối phó với một tổ chức tội phạm mạnh mẽ đang âm thầm
-                      thôn tính thế giới. Sự kết hợp giữa tính cách hóm hỉnh của Deadpool và sự nghiêm túc của Wolverine tạo nên những tình huống dở khóc dở cười,
-                      cùng những màn chiến đấu mãn nhãn. Bộ phim không chỉ mang đến những pha hành động nghẹt thở mà còn khai thác sâu sắc về tình bạn và sự
-                      hy sinh, đưa khán giả vào một cuộc phiêu lưu không thể nào quên.
-                  </p>
-              </div>
-            </section>
+  <!-- Movie Summary -->
+  <div class="summary-box">
+      <h2 class="h4 summary-title">Tóm tắt</h2>
+      <p class="summary-text">
+          "The Wild Robot" kể về cuộc phiêu lưu của Roz, một robot bị trôi dạt và mắc kẹt trên một hòn đảo hoang sơ sau một trận bão lớn.
+          Không có sự giúp đỡ từ con người, Roz phải học cách sinh tồn và kết bạn với các loài động vật để tồn tại trong môi trường tự nhiên.
+          Qua hành trình đầy thử thách và khám phá, Roz dần hiểu được ý nghĩa của tình bạn, gia đình và sự kết nối với thế giới tự nhiên.
+          Phim hứa hẹn mang đến những khoảnh khắc xúc động và những thông điệp sâu sắc về tình yêu thương và môi trường.
+      </p>
+  </div>
+</section>
+
+
         </div>
   </main>
 
@@ -221,6 +221,5 @@
     <script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../../JS/Header.js"></script>
     <script src="../../JS/Account.js"></script>
-    <script src="../../JS/Register_Login.js"></script>
   </body>
 </html>
