@@ -3,6 +3,134 @@ body.bg-dark section h2 {
   color: #ffd700;
 }
 
+body.bg-dark .slider-btn svg.size-6 {
+  color: #ffd700;
+}
+
+body.bg-dark .day-selector {
+  border-color: #ffd700;
+}
+
+body.bg-dark .day {
+  color: #393e46;
+  border-color: #ffd700;
+  background-color: #ffff80;
+}
+
+body.bg-dark .day.active {
+  background-color: #686d76;
+  color: #fff;
+}
+
+body.bg-dark .movie-list-container {
+  border-color: #ffd700;
+}
+
+body.bg-dark .sticky-header {
+  background-color: #ffff80;
+  color: #393e46;
+  border-color: #ffd700;
+}
+
+body.bg-dark .movie-item {
+  border-color: #ffd700;
+  background-color: #ffff80;
+}
+
+body.bg-dark .movie-item:hover {
+  background-color: #686d76;
+}
+
+body.bg-dark .movie-item.selected {
+  color: #fff;
+  background-color: #686d76;
+}
+
+body.bg-dark .time-list-container {
+  border-color: #ffd700;
+}
+
+body.bg-dark .time-list-container h5 {
+  background-color: #ffff80;
+  color: #393e46;
+  border-color: #ffd700;
+}
+
+body.bg-dark .time-slot {
+  border-color: #ffd700;
+  background-color: #ffff80;
+  color: #393e46;
+}
+
+body.bg-dark .time-slot.selected {
+  background-color: #686d76;
+  color: #fff;
+}
+
+body.bg-dark .time-slot:hover {
+  background-color: #ffd700;
+  color: #393e46;
+}
+
+body.bg-dark .screen {
+  background-color: #f3c623;
+}
+
+body.bg-dark .seat {
+  color: #393e46;
+  border-color: #ffd700;
+}
+
+body.bg-dark .seat.booked {
+  color: #fff;
+}
+
+body.bg-dark .seat-map-container {
+  border-color: #ffd700;
+}
+
+body.bg-dark .selected-seats-info,
+body.bg-dark .total-amount-info {
+  background-color: #fffbe0;
+}
+
+body.bg-dark .payment-details {
+  border-color: #ffd700;
+}
+
+body.bg-dark .payment-method-label {
+  color: #ffd700;
+}
+
+body.bg-dark .qr-code-section {
+  border-color: #ffd700;
+}
+
+body.bg-dark .qr-title {
+  color: #ffd700;
+}
+
+body.bg-dark .qr-code-display {
+  border-color: #ffd700;
+}
+
+body.bg-dark .payment-button.active {
+  background-color: #ffd700;
+  color: #393e46;
+}
+
+body.bg-dark #create-qr-button {
+  background-color: #ffd700;
+  border-color: #393e46;
+  color: #393e46;
+}
+
+body.bg-dark #pay-button {
+  background-color: #ffd700;
+  border-color: #393e46;
+  color: #393e46;
+}
+
 .showtimes {
   padding-bottom: 20px;
 }
@@ -124,6 +252,7 @@ body.bg-dark section h2 {
   margin: 8px 5px 5px 8px; /* Khoảng cách giữa các mục phim */
   border: 1px solid transparent; /* Viền trong suốt ban đầu */
   border-radius: 0;
+  display: block;
   cursor: pointer; /* Con trỏ khi di chuột */
   transition: border-color 0.3s ease, background-color 0.3s ease; /* Hiệu ứng chuyển tiếp */
 }
@@ -136,11 +265,6 @@ body.bg-dark section h2 {
 .movie-item.selected {
   border-color: #393e46;
   background-color: #ffd700;
-}
-
-/* Thêm phần này để đảm bảo mục phim xếp thẳng hàng theo cột */
-.movie-item {
-  display: block; /* Đảm bảo các mục phim hiển thị theo dạng block */
 }
 
 /* Cột phải: Danh sách khung giờ */
@@ -443,7 +567,19 @@ body.bg-dark section h2 {
 }
 
 .payment-options .payment-button.active {
-  background-color: #007bff;
+  background-color: #686d76;
+  color: #fff;
+}
+
+#create-qr-button {
+  background-color: #686d76;
+  border-color: #393e46;
+  color: #fff;
+}
+
+#pay-button {
+  background-color: #686d76;
+  border-color: #393e46;
   color: #fff;
 }
 

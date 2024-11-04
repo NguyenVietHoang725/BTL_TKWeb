@@ -1,3 +1,15 @@
+body.bg-dark .auth-form-container h1 {
+  color: #393e46;
+}
+
+body.bg-dark .eye-icon {
+  color: #393e46;
+}
+
+body.bg-dark .eye-icon-signin {
+  color: #393e46;
+}
+
 :root {
   --primary-color: #fac213;
   --secondary-color: #ffd700;

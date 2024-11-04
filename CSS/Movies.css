@@ -1,3 +1,35 @@
+body.bg-dark .tab {
+  border-color: #ffd700;
+  background-color: #fffbe0;
+  color: #393e46;
+}
+
+body.bg-dark .tab.active {
+  background-color: #ffd700;
+}
+
+body.bg-dark .tab:not(.active):hover {
+  background-color: #ffd369;
+}
+
+body.bg-dark .poster {
+  border-color: #ffd700;
+  color: #393e46;
+}
+
+body.bg-dark .poster-buttons a {
+  background-color: #ffd700;
+  color: #393e46;
+}
+
+body.bg-dark .poster-buttons a:hover {
+  background-color: #fffbe0;
+}
+
+body.bg-dark .banner-section img {
+  border-color: #ffd700;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -21,7 +53,7 @@ main {
 }
 
 .tab.active {
-  background-color: #007bff;
+  background-color: #393e46;
   color: white;
 }
 
@@ -96,18 +128,18 @@ main {
   opacity: 1;
 }
 
-.poster-buttons button {
+.poster-buttons a {
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
+  background-color: #393e46;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.poster-buttons button:hover {
-  background-color: #0056b3;
+.poster-buttons a:hover {
+  background-color: #666;
 }
 
 .button-container {
@@ -130,7 +162,7 @@ main {
 }
 
 .show-more:hover {
-  background-color: #0056b3; /* Đổi màu khi hover */
+  background-color: #ffd700; /* Đổi màu khi hover */
 }
 
 .banner-section {
