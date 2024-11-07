@@ -1,0 +1,123 @@
+body.bg-dark .account-info,
+body.bg-dark .ticket-history {
+  background-color: #fffbe0;
+}
+
+body.bg-dark h2 {
+  color: #393e46;
+}
+
+/* Account information section */
+.account-info {
+  background-color: #f8f9fa; /* Light gray background for contrast */
+  border-color: #ddd; /* Softer border color */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Consistent padding */
+  border-radius: 10px; /* Rounded corners for uniformity */
+}
+
+.account-info h2 {
+  color: #393e46; /* Darker heading color for emphasis */
+  font-weight: 600;
+  border-bottom: 2px solid #393e46; /* Blue underline for accent */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.account-info .form-label {
+  font-weight: 500;
+  color: #393e46; /* Muted label color */
+}
+
+.account-info .form-control {
+  border: 1px solid #ced4da; /* Subtle border color */
+  border-radius: 5px;
+}
+
+.account-info .d-flex .form-control {
+  flex: 1;
+}
+
+.account-info button {
+  margin-right: 10px;
+}
+
+#edit-button {
+  background-color: #393e46;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#edit-button:hover {
+  background-color: #666;
+}
+
+#save-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#save-button:hover {
+  background-color: #218838;
+}
+
+/* Ticket history section */
+.ticket-history {
+  background-color: #fff;
+  border-radius: 10px; /* Matching border radius */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Consistent padding */
+}
+
+.ticket-history h2 {
+  color: #393e46;
+  font-weight: 600;
+  border-bottom: 2px solid #393e46; /* Green underline for accent */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.table thead th {
+  background-color: #393e46;
+  color: #fff;
+  text-align: center;
+  border: none;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f8f9fa;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
+}
+
+.table th,
+.table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .account-info .row .col-md-6 {
+    margin-bottom: 15px;
+  }
+
+  #edit-button,
+  #save-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
