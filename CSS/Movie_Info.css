@@ -1,3 +1,28 @@
+body.bg-dark .movie-title {
+  color: #ffd700;
+}
+
+body.bg-dark .rating-label {
+  color: #fff;
+}
+
+body.bg-dark .info-item {
+  color: #fff;
+}
+
+body.bg-dark .summary-box {
+  background-color: #fffbe0;
+}
+
+body.bg-dark .btn-custom {
+  color: #343a40;
+  background-color: #f0e19e;
+}
+
+body.bg-dark .btn-custom:hover {
+  background-color: #ffd700;
+}
+
 /* Section chính */
 .movie-poster-section,
 .movie-details-section {
@@ -38,13 +63,13 @@
 
 /* Nút bấm */
 .btn-custom {
-  background-color: #007bff; /* Màu nền nút */
+  background-color: #495057; /* Màu nền nút */
   color: #fff; /* Màu chữ nút */
   transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
 }
 
 .btn-custom:hover {
-  background-color: #0056b3; /* Màu nền khi hover */
+  background-color: #343a40; /* Màu nền khi hover */
 }
 
 /* Ảnh phim */

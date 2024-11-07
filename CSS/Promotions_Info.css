@@ -1,95 +1,120 @@
+body.bg-dark .promo-title {
+  color: #ffd700;
+}
+
+body.bg-dark .promo-duration-label {
+  color: #fff;
+}
+
+body.bg-dark .promo-info-item {
+  color: #fff;
+}
+
+body.bg-dark .details-box {
+  background-color: #fffbe0;
+}
+
+body.bg-dark .btn-promo {
+  color: #343a40;
+  background-color: #f0e19e;
+}
+
+body.bg-dark .btn-promo:hover {
+  background-color: #ffd700;
+}
+
 /* Section chính */
 .movie-poster-section,
 .movie-details-section {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 /* Tiêu đề ưu đãi */
 .promo-title {
-    font-size: 26px; /* Tăng kích thước cho tiêu đề */
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #343a40; /* Màu tiêu đề */
+  font-size: 26px; /* Tăng kích thước cho tiêu đề */
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #343a40; /* Màu tiêu đề */
 }
 
 /* Thời gian ưu đãi */
 .promo-duration-label {
-    margin-right: 10px; /* Tăng khoảng cách bên phải của nhãn */
+  margin-right: 10px; /* Tăng khoảng cách bên phải của nhãn */
 }
 
 .discount-duration {
-    margin-left: 8px; /* Tăng khoảng cách bên trái của thời gian ưu đãi */
-    font-weight: bold;
-    color: #ff6347; /* Màu sắc nổi bật */
+  margin-left: 8px; /* Tăng khoảng cách bên trái của thời gian ưu đãi */
+  font-weight: bold;
+  color: #ff6347; /* Màu sắc nổi bật */
 }
 
 /* Tiêu đề chi tiết */
 .details-title {
-    font-size: 24px; /* Kích thước cho tiêu đề chi tiết */
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #343a40; /* Màu tiêu đề */
+  font-size: 24px; /* Kích thước cho tiêu đề chi tiết */
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #343a40; /* Màu tiêu đề */
 }
 
 .promo-details-section {
-    padding: 0 60px;
+  padding: 0 60px;
 }
 
 /* Nội dung section */
 .promo-details-section p,
 .details-text {
-    font-size: 16px;
-    line-height: 1.6; /* Khoảng cách giữa các dòng */
-    color: #495057; /* Màu văn bản tối hơn */
+  font-size: 16px;
+  line-height: 1.6; /* Khoảng cách giữa các dòng */
+  color: #495057; /* Màu văn bản tối hơn */
 }
 
 /* Nút bấm */
 .btn-promo {
-    background-color: #007bff; /* Màu nền nút */
-    color: #fff; /* Màu chữ nút */
-    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+  background-color: #495057; /* Màu nền nút */
+  color: #fff; /* Màu chữ nút */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
 }
 
 .btn-promo:hover {
-    background-color: #0056b3; /* Màu nền khi hover */
+  background-color: #343a40; /* Màu nền khi hover */
 }
 
 /* Ảnh ưu đãi */
 .promo-image {
-    width: 80%; /* Chiều rộng 100% */
+  width: 80%; /* Chiều rộng 100% */
 }
 
 /* Định dạng thông tin ưu đãi */
 .promo-info {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Khoảng cách giữa các phần tử */
-    margin-bottom: 20px; /* Thêm khoảng cách dưới cùng */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Khoảng cách giữa các phần tử */
+  margin-bottom: 20px; /* Thêm khoảng cách dưới cùng */
 }
 
 /* Thông tin từng mục */
 .promo-info-item {
-    font-size: 16px;
-    color: #6c757d; /* Màu văn bản thông tin */
+  font-size: 16px;
+  color: #6c757d; /* Màu văn bản thông tin */
 }
 
 /* Kích thước ảnh tùy chỉnh */
 .custom-img-size {
-    max-width: 100%; /* Điều chỉnh tỉ lệ mong muốn (100% chiều rộng của phần tử chứa) */
-    height: auto; /* Đảm bảo tỷ lệ ảnh không thay đổi */
-    border-radius: 10px;
+  max-width: 100%; /* Điều chỉnh tỉ lệ mong muốn (100% chiều rộng của phần tử chứa) */
+  height: auto; /* Đảm bảo tỷ lệ ảnh không thay đổi */
+  border-radius: 10px;
 }
 
 /* Khung chi tiết ưu đãi */
 .details-box {
-    border: 1px solid #ccc; /* Đường viền màu xám nhạt */
-    padding: 15px; /* Khoảng cách bên trong */
-    border-radius: 8px; /* Bo góc cho khung */
-    background-color: #f8f9fa; /* Nền màu sáng hơn */
+  border: 1px solid #ccc; /* Đường viền màu xám nhạt */
+  padding: 15px; /* Khoảng cách bên trong */
+  border-radius: 8px; /* Bo góc cho khung */
+  background-color: #f8f9fa; /* Nền màu sáng hơn */
 }
 
 /* Điều chỉnh khoảng cách giữa các hàng */
 .row {
-    position: relative;
-    top: 30px; /* Điều chỉnh vị trí của hàng */
+  position: relative;
+  top: 30px; /* Điều chỉnh vị trí của hàng */
 }

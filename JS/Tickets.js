@@ -1,5 +1,5 @@
 const dayElements = Array.from(document.querySelectorAll(".day"));
-const daysToShow = 7; // Số ngày hiển thị mỗi lần
+const daysToShow = 7;
 let currentStartIndex = 0;
 
 // Cập nhật hiển thị các ngày
@@ -320,11 +320,9 @@ function calculateTotalAmount(selectedTime) {
   return amount;
 }
 
-// Tạo một biến để lưu trữ phương thức thanh toán đã chọn
 let selectedPaymentMethod = null;
-let ticketHistory = []; // Mảng để lưu trữ lịch sử vé
+let ticketHistory = [];
 
-// Cập nhật toggleSeatSelection để truyền selectedTime
 function toggleSeatSelection(seat) {
   const seatType = seat.classList.contains("vip")
     ? "vip"
